@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Target, BookOpen, Clock } from "lucide-react";
+import { ArrowRight, Target,  Clock } from "lucide-react";
 import aptitudeData from "../../data/aptitude.json";
 
 const tips = [

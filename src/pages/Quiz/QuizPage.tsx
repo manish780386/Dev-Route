@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import {
-  Timer, Trophy, RotateCcw, ChevronRight, CheckCircle2,
+  Timer,  RotateCcw, ChevronRight, CheckCircle2,
   XCircle, AlertCircle, Play, BookOpen, Brain, Calculator, Code2
 } from "lucide-react";
 import aptitudeData from "../../data/aptitude.json";
-import csData from "../../data/cs-subjects.json";
+
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
