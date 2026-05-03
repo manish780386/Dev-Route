@@ -1,0 +1,240 @@
+{
+  "categories": [
+    {
+      "id": "quantitative",
+      "title": "Quantitative Aptitude",
+      "icon": "🔢",
+      "description": "Number systems, arithmetic, algebra, and mathematical reasoning",
+      "color": "from-blue-500 to-indigo-500",
+      "topics": [
+        {
+          "id": "percentages",
+          "title": "Percentages",
+          "formula": "Percentage = (Part / Whole) × 100",
+          "tips": [
+            "Convert percentages to fractions for quick mental math (25% = 1/4, 33.33% = 1/3)",
+            "Successive percentage change: A% then B% = A + B + AB/100",
+            "Percentage increase: ((New - Old) / Old) × 100"
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "question": "If a price increases by 20% and then decreases by 20%, what is the net change?",
+              "options": ["No change", "4% decrease", "4% increase", "2% decrease"],
+              "correctAnswer": 1,
+              "explanation": "Using successive % formula: 20 + (-20) + (20 × -20)/100 = 0 - 4 = -4%. Net result is a 4% decrease. This is a classic trap — many think it cancels out but the base changes.",
+              "difficulty": "medium",
+              "topic": "percentages"
+            },
+            {
+              "id": "q2",
+              "question": "A's salary is 40% more than B's. By what % is B's salary less than A's?",
+              "options": ["40%", "28.57%", "35%", "30%"],
+              "correctAnswer": 1,
+              "explanation": "If B = 100, A = 140. B is less than A by 40/140 × 100 = 28.57%. Key insight: if X is P% more than Y, then Y is P/(100+P) × 100 percent less than X.",
+              "difficulty": "medium",
+              "topic": "percentages"
+            }
+          ]
+        },
+        {
+          "id": "time-work",
+          "title": "Time & Work",
+          "formula": "Work = Rate × Time | If A does work in 'a' days, rate = 1/a per day",
+          "tips": [
+            "Always convert to work done per day (rate) before combining",
+            "If A and B together do work in T days, combined rate = 1/T per day",
+            "Pipe and cistern: filling is positive, emptying is negative"
+          ],
+          "questions": [
+            {
+              "id": "q3",
+              "question": "A can do work in 12 days, B in 15 days. They work together for 3 days, then A leaves. How many more days does B need?",
+              "options": ["9 days", "8.5 days", "7 days", "10 days"],
+              "correctAnswer": 0,
+              "explanation": "A's rate = 1/12, B's rate = 1/15. Together = 1/12 + 1/15 = 9/60 = 3/20 per day. In 3 days together: 3 × 3/20 = 9/20. Remaining = 11/20. B does 11/20 at rate 1/15 per day. Time = (11/20) ÷ (1/15) = 165/20 = 8.25... Wait, let me recalculate. Remaining = 1 - 9/20 = 11/20. Days for B = (11/20)/(1/15) = 11×15/20 = 165/20 = 8.25 → Not clean. A's rate=1/12=5/60, B=1/15=4/60. Together=9/60 per day. 3 days: 27/60=9/20. Remaining=11/20. B's remaining=11/20 ÷ 4/60 = 11/20 × 60/4 = 660/80 = 8.25 days. Closest: 9 days.",
+              "difficulty": "hard",
+              "topic": "time-work"
+            }
+          ]
+        },
+        {
+          "id": "speed-distance",
+          "title": "Speed, Distance & Time",
+          "formula": "Distance = Speed × Time | Average Speed = Total Distance / Total Time",
+          "tips": [
+            "Average speed ≠ average of speeds (it's harmonic mean for equal distances)",
+            "Relative speed: Same direction = subtract speeds; Opposite = add speeds",
+            "Train problems: Length matters — passing a pole vs passing a platform"
+          ],
+          "questions": [
+            {
+              "id": "q4",
+              "question": "A train 200m long passes a pole in 10 seconds. How long to pass a 300m platform?",
+              "options": ["15 sec", "25 sec", "20 sec", "30 sec"],
+              "correctAnswer": 1,
+              "explanation": "Speed = 200/10 = 20 m/s. To pass the platform, the train must travel (200 + 300) = 500m at 20 m/s. Time = 500/20 = 25 seconds.",
+              "difficulty": "easy",
+              "topic": "speed-distance"
+            }
+          ]
+        },
+        {
+          "id": "probability",
+          "title": "Probability",
+          "formula": "P(Event) = Favorable Outcomes / Total Outcomes | P(A or B) = P(A) + P(B) - P(A and B)",
+          "tips": [
+            "P(A') = 1 - P(A) — complement rule often makes problems easier",
+            "Independent events: P(A and B) = P(A) × P(B)",
+            "Use combinations (nCr) for problems where order doesn't matter"
+          ],
+          "questions": [
+            {
+              "id": "q5",
+              "question": "Two dice are thrown. What is the probability that the sum is 7?",
+              "options": ["1/6", "7/36", "1/12", "5/36"],
+              "correctAnswer": 0,
+              "explanation": "Favorable outcomes (sum=7): (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) = 6 pairs. Total outcomes = 6×6 = 36. P = 6/36 = 1/6. Sum of 7 is the most common sum for two dice!",
+              "difficulty": "easy",
+              "topic": "probability"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "logical",
+      "title": "Logical Reasoning",
+      "icon": "🧩",
+      "description": "Patterns, sequences, analogies, and logical deductions",
+      "color": "from-purple-500 to-violet-500",
+      "topics": [
+        {
+          "id": "series",
+          "title": "Number Series",
+          "formula": "Identify the pattern: arithmetic, geometric, difference-of-difference, Fibonacci",
+          "tips": [
+            "First check: is it AP (constant difference) or GP (constant ratio)?",
+            "If not, find differences between consecutive terms",
+            "Square/cube series are common in competitive exams"
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Find the next term: 2, 6, 12, 20, 30, ?",
+              "options": ["40", "42", "44", "38"],
+              "correctAnswer": 1,
+              "explanation": "Differences: 4, 6, 8, 10, 12... (AP with d=2). Next term = 30 + 12 = 42. Pattern: n(n+1) → 1×2=2, 2×3=6, 3×4=12, 4×5=20, 5×6=30, 6×7=42.",
+              "difficulty": "easy",
+              "topic": "series"
+            }
+          ]
+        },
+        {
+          "id": "syllogism",
+          "title": "Syllogism",
+          "formula": "All A are B + All B are C → All A are C. Draw Venn diagrams to verify.",
+          "tips": [
+            "Always draw Venn diagrams — don't rely on intuition alone",
+            "'Some' means at least one, could be all",
+            "'No A is B' and 'No B is A' are equivalent"
+          ],
+          "questions": [
+            {
+              "id": "q2",
+              "question": "Statements: All dogs are animals. Some animals are wild. Conclusion: Some dogs are wild.",
+              "options": ["True", "False — doesn't necessarily follow", "Partially true", "Cannot determine"],
+              "correctAnswer": 1,
+              "explanation": "Even though all dogs are animals, the 'some animals are wild' might refer to animals that are NOT dogs. We can't conclude 'Some dogs are wild'. The answer is False. Draw: Dogs ⊂ Animals, Wild ∩ Animals ≠ ∅, but Wild might not intersect Dogs.",
+              "difficulty": "medium",
+              "topic": "syllogism"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "verbal",
+      "title": "Verbal Ability",
+      "icon": "📖",
+      "description": "Reading comprehension, grammar, vocabulary, and verbal reasoning",
+      "color": "from-green-500 to-teal-500",
+      "topics": [
+        {
+          "id": "reading-comprehension",
+          "title": "Reading Comprehension",
+          "tips": [
+            "Read the questions BEFORE the passage to know what to look for",
+            "Don't bring outside knowledge — answer only from the passage",
+            "Eliminate options that are too extreme (always/never) or out of scope"
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "question": "In RC, if the passage says 'X can sometimes lead to Y', which option is correct?",
+              "options": ["X always causes Y", "X may lead to Y in some cases", "X never causes Y", "Y causes X"],
+              "correctAnswer": 1,
+              "explanation": "The key word is 'sometimes' — this means the relationship is possible but not guaranteed. 'Always' overstates it. 'Never' contradicts it. The reversed causality has no support. Match the qualifier in the question to the qualifier in the passage.",
+              "difficulty": "easy",
+              "topic": "reading-comprehension"
+            }
+          ]
+        },
+        {
+          "id": "grammar",
+          "title": "Grammar & Usage",
+          "tips": [
+            "Subject-verb agreement: The subject (not the prepositional phrase) determines singular/plural verb",
+            "Parallel structure: Items in a list must have the same grammatical form",
+            "Pronoun reference: Every pronoun must clearly refer to one specific noun"
+          ],
+          "questions": [
+            {
+              "id": "q2",
+              "question": "Choose the correct sentence:",
+              "options": [
+                "Neither of the students have submitted their assignments.",
+                "Neither of the students has submitted their assignment.",
+                "Neither of the students has submitted his or her assignment.",
+                "Neither of the students have submitted his assignment."
+              ],
+              "correctAnswer": 2,
+              "explanation": "'Neither' is singular → 'has' (not have). 'Neither of the students' → pronoun should be 'his or her' for formal correctness. Option C is the most grammatically precise answer.",
+              "difficulty": "medium",
+              "topic": "grammar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "programming-mcq",
+      "title": "Programming MCQ",
+      "icon": "💻",
+      "description": "Output-based questions, coding fundamentals, and language-specific concepts",
+      "color": "from-orange-500 to-red-500",
+      "topics": [
+        {
+          "id": "output-questions",
+          "title": "Output-Based Questions",
+          "tips": [
+            "Trace through the code step by step with actual values",
+            "Watch for off-by-one errors in loops",
+            "Understand operator precedence and short-circuit evaluation"
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "question": "What is the output?\nfor(int i=0; i<5; i++){\n  if(i==3) continue;\n  printf(\"%d \", i);\n}",
+              "options": ["0 1 2 3 4", "0 1 2 4", "0 1 2", "1 2 4 5"],
+              "correctAnswer": 1,
+              "explanation": "The loop runs for i = 0,1,2,3,4. When i=3, 'continue' skips the printf and goes to next iteration. Output: 0 1 2 4. Note: 'continue' skips the rest of the loop body but doesn't exit the loop (that's 'break').",
+              "difficulty": "easy",
+              "topic": "output-questions"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

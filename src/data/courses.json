@@ -1,0 +1,570 @@
+{
+  "courses": [
+    {
+      "id": "full-stack-web",
+      "title": "Full Stack Web Development",
+      "icon": "🌐",
+      "tagline": "Build complete web applications from scratch",
+      "category": "Web",
+      "duration": "6-8 months",
+      "difficulty": "Beginner to Advanced",
+      "avgSalary": "6-18 LPA",
+      "color": "from-blue-500 to-cyan-400",
+      "jobRoles": ["Frontend Developer", "Backend Developer", "Full Stack Developer", "Web Engineer"],
+      "companies": ["Google", "Amazon", "Flipkart", "Swiggy", "Zomato", "Razorpay"],
+      "futureScope": "Full stack development remains one of the most in-demand skills globally. With the rise of SaaS products, startups, and digital transformation, full stack developers command premium salaries. The shift to cloud-native architectures and microservices means full stack devs who understand DevOps will have even stronger career prospects through 2030.",
+      "popularSkills": ["React", "Node.js", "TypeScript", "PostgreSQL", "Docker", "AWS"],
+      "syllabus": [
+        {
+          "phase": 1,
+          "title": "Frontend Fundamentals",
+          "duration": "4-6 weeks",
+          "topics": [
+            {
+              "id": "html-css",
+              "title": "HTML & CSS",
+              "subtopics": ["Semantic HTML5", "CSS Flexbox & Grid", "Responsive Design", "CSS Variables", "Animations"],
+              "resources": [
+                { "title": "MDN Web Docs", "url": "https://developer.mozilla.org", "type": "docs", "isFree": true },
+                { "title": "CSS-Tricks", "url": "https://css-tricks.com", "type": "article", "isFree": true }
+              ],
+              "isCore": true
+            },
+            {
+              "id": "javascript",
+              "title": "JavaScript (ES6+)",
+              "subtopics": ["DOM Manipulation", "Async/Await", "Promises", "Closures", "Prototypes", "Modules"],
+              "resources": [
+                { "title": "JavaScript.info", "url": "https://javascript.info", "type": "docs", "isFree": true },
+                { "title": "Eloquent JavaScript", "url": "https://eloquentjavascript.net", "type": "book", "isFree": true }
+              ],
+              "isCore": true
+            }
+          ]
+        },
+        {
+          "phase": 2,
+          "title": "React & TypeScript",
+          "duration": "6-8 weeks",
+          "topics": [
+            {
+              "id": "react",
+              "title": "React",
+              "subtopics": ["Components & Props", "Hooks (useState, useEffect, useRef)", "Context API", "React Router", "Performance Optimization"],
+              "resources": [
+                { "title": "React Docs", "url": "https://react.dev", "type": "docs", "isFree": true }
+              ],
+              "isCore": true
+            },
+            {
+              "id": "typescript",
+              "title": "TypeScript",
+              "subtopics": ["Types & Interfaces", "Generics", "Type Narrowing", "Utility Types", "Decorators"],
+              "resources": [
+                { "title": "TypeScript Handbook", "url": "https://www.typescriptlang.org/docs", "type": "docs", "isFree": true }
+              ],
+              "isCore": true
+            }
+          ]
+        },
+        {
+          "phase": 3,
+          "title": "Backend with Node.js",
+          "duration": "6-8 weeks",
+          "topics": [
+            {
+              "id": "nodejs",
+              "title": "Node.js & Express",
+              "subtopics": ["REST API Design", "Middleware", "Authentication (JWT)", "File Uploads", "Error Handling"],
+              "resources": [
+                { "title": "Node.js Docs", "url": "https://nodejs.org/docs", "type": "docs", "isFree": true }
+              ],
+              "isCore": true
+            },
+            {
+              "id": "databases",
+              "title": "Databases",
+              "subtopics": ["PostgreSQL", "MongoDB", "Redis", "ORMs (Prisma)", "Database Design", "Indexing"],
+              "resources": [
+                { "title": "PostgreSQL Tutorial", "url": "https://www.postgresqltutorial.com", "type": "docs", "isFree": true }
+              ],
+              "isCore": true
+            }
+          ]
+        },
+        {
+          "phase": 4,
+          "title": "DevOps & Deployment",
+          "duration": "3-4 weeks",
+          "topics": [
+            {
+              "id": "devops-basics",
+              "title": "DevOps Essentials",
+              "subtopics": ["Docker & Containers", "CI/CD Pipelines", "AWS/Vercel Deployment", "Environment Variables", "Monitoring"],
+              "resources": [
+                { "title": "Docker Docs", "url": "https://docs.docker.com", "type": "docs", "isFree": true }
+              ],
+              "isCore": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data-science",
+      "title": "Data Science",
+      "icon": "📊",
+      "tagline": "Turn raw data into powerful insights",
+      "category": "Data",
+      "duration": "6-9 months",
+      "difficulty": "Intermediate",
+      "avgSalary": "8-22 LPA",
+      "color": "from-emerald-500 to-teal-400",
+      "jobRoles": ["Data Scientist", "Data Analyst", "Business Intelligence Analyst", "Research Scientist"],
+      "companies": ["Google", "Microsoft", "Amazon", "Flipkart", "Paytm", "CRED"],
+      "futureScope": "Data Science is projected to be one of the top 5 careers globally through 2030. With every business becoming data-driven, the demand for skilled data scientists is exploding. Specializations in AI, NLP, and computer vision command even higher salaries. India alone needs 200k+ data professionals by 2026.",
+      "popularSkills": ["Python", "Pandas", "NumPy", "SQL", "Scikit-learn", "Tableau", "Power BI"],
+      "syllabus": [
+        {
+          "phase": 1,
+          "title": "Python for Data Science",
+          "duration": "4-5 weeks",
+          "topics": [
+            {
+              "id": "python-ds",
+              "title": "Python Fundamentals",
+              "subtopics": ["Data Types", "Control Flow", "Functions", "OOP", "File Handling", "List Comprehensions"],
+              "resources": [
+                { "title": "Python.org Docs", "url": "https://docs.python.org/3", "type": "docs", "isFree": true }
+              ],
+              "isCore": true
+            }
+          ]
+        },
+        {
+          "phase": 2,
+          "title": "Data Analysis",
+          "duration": "5-6 weeks",
+          "topics": [
+            {
+              "id": "pandas-numpy",
+              "title": "Pandas & NumPy",
+              "subtopics": ["DataFrames", "Data Cleaning", "Merging & Grouping", "Time Series", "Array Operations"],
+              "resources": [
+                { "title": "Pandas Docs", "url": "https://pandas.pydata.org/docs", "type": "docs", "isFree": true }
+              ],
+              "isCore": true
+            },
+            {
+              "id": "visualization",
+              "title": "Data Visualization",
+              "subtopics": ["Matplotlib", "Seaborn", "Plotly", "Tableau Basics", "Dashboard Design"],
+              "resources": [
+                { "title": "Matplotlib Tutorials", "url": "https://matplotlib.org/stable/tutorials", "type": "docs", "isFree": true }
+              ],
+              "isCore": true
+            }
+          ]
+        },
+        {
+          "phase": 3,
+          "title": "Statistics & ML",
+          "duration": "6-8 weeks",
+          "topics": [
+            {
+              "id": "statistics",
+              "title": "Statistics & Probability",
+              "subtopics": ["Descriptive Stats", "Probability Distributions", "Hypothesis Testing", "Regression", "Bayesian Thinking"],
+              "resources": [],
+              "isCore": true
+            },
+            {
+              "id": "ml-basics",
+              "title": "Machine Learning Basics",
+              "subtopics": ["Supervised Learning", "Unsupervised Learning", "Model Evaluation", "Feature Engineering", "Scikit-learn"],
+              "resources": [],
+              "isCore": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "machine-learning",
+      "title": "Machine Learning & AI",
+      "icon": "🤖",
+      "tagline": "Build intelligent systems that learn from data",
+      "category": "AI/ML",
+      "duration": "8-12 months",
+      "difficulty": "Advanced",
+      "avgSalary": "12-35 LPA",
+      "color": "from-purple-500 to-pink-400",
+      "jobRoles": ["ML Engineer", "AI Engineer", "Deep Learning Engineer", "NLP Engineer", "Computer Vision Engineer"],
+      "companies": ["Google DeepMind", "OpenAI", "Microsoft", "Amazon", "Nvidia", "Anthropic"],
+      "futureScope": "AI/ML is the single fastest-growing tech field in history. With LLMs, generative AI, and autonomous systems reshaping every industry, ML engineers are the most sought-after professionals globally. The gap between demand and supply is enormous, making this the highest-paying tech career path.",
+      "popularSkills": ["Python", "TensorFlow", "PyTorch", "Transformers", "LangChain", "CUDA"],
+      "syllabus": [
+        {
+          "phase": 1,
+          "title": "Mathematical Foundations",
+          "duration": "4-6 weeks",
+          "topics": [
+            {
+              "id": "math-ml",
+              "title": "Math for ML",
+              "subtopics": ["Linear Algebra", "Calculus (Gradients)", "Probability & Statistics", "Optimization Theory"],
+              "resources": [],
+              "isCore": true
+            }
+          ]
+        },
+        {
+          "phase": 2,
+          "title": "Classical ML",
+          "duration": "6-8 weeks",
+          "topics": [
+            {
+              "id": "classical-ml",
+              "title": "ML Algorithms",
+              "subtopics": ["Linear/Logistic Regression", "Decision Trees & Random Forests", "SVM", "KNN", "Clustering", "Dimensionality Reduction"],
+              "resources": [],
+              "isCore": true
+            }
+          ]
+        },
+        {
+          "phase": 3,
+          "title": "Deep Learning",
+          "duration": "8-10 weeks",
+          "topics": [
+            {
+              "id": "deep-learning",
+              "title": "Neural Networks & Deep Learning",
+              "subtopics": ["Perceptrons", "CNNs", "RNNs & LSTMs", "Transformers", "Attention Mechanism", "GANs"],
+              "resources": [
+                { "title": "Fast.ai", "url": "https://fast.ai", "type": "video", "isFree": true },
+                { "title": "Deep Learning Book", "url": "https://www.deeplearningbook.org", "type": "book", "isFree": true }
+              ],
+              "isCore": true
+            }
+          ]
+        },
+        {
+          "phase": 4,
+          "title": "LLMs & GenAI",
+          "duration": "4-6 weeks",
+          "topics": [
+            {
+              "id": "llms",
+              "title": "Large Language Models",
+              "subtopics": ["Prompt Engineering", "Fine-tuning", "RAG Systems", "LangChain", "Vector Databases", "AI Agents"],
+              "resources": [],
+              "isCore": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "android-dev",
+      "title": "Android Development",
+      "icon": "📱",
+      "tagline": "Build native Android apps used by billions",
+      "category": "Mobile",
+      "duration": "5-7 months",
+      "difficulty": "Intermediate",
+      "avgSalary": "7-20 LPA",
+      "color": "from-green-500 to-lime-400",
+      "jobRoles": ["Android Developer", "Mobile Engineer", "Kotlin Developer"],
+      "companies": ["Google", "Samsung", "OnePlus", "Paytm", "PhonePe", "BYJU'S"],
+      "futureScope": "Android powers 70%+ of smartphones globally. With India's massive smartphone adoption and the rise of super-apps, Android developers remain highly in demand. Kotlin Multiplatform is extending Android skills to iOS too, making it a future-proof investment.",
+      "popularSkills": ["Kotlin", "Jetpack Compose", "Android SDK", "Room", "Retrofit", "MVVM"],
+      "syllabus": [
+        {
+          "phase": 1,
+          "title": "Kotlin Fundamentals",
+          "duration": "3-4 weeks",
+          "topics": [
+            {
+              "id": "kotlin",
+              "title": "Kotlin Programming",
+              "subtopics": ["Data Classes", "Coroutines", "Extensions", "Sealed Classes", "Flows"],
+              "resources": [{ "title": "Kotlin Docs", "url": "https://kotlinlang.org/docs", "type": "docs", "isFree": true }],
+              "isCore": true
+            }
+          ]
+        },
+        {
+          "phase": 2,
+          "title": "Android Core",
+          "duration": "6-8 weeks",
+          "topics": [
+            {
+              "id": "android-core",
+              "title": "Android SDK & Jetpack",
+              "subtopics": ["Activities & Fragments", "Jetpack Compose", "Navigation Component", "ViewModel & LiveData", "Room Database"],
+              "resources": [{ "title": "Android Developers", "url": "https://developer.android.com", "type": "docs", "isFree": true }],
+              "isCore": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "devops-cloud",
+      "title": "DevOps & Cloud",
+      "icon": "☁️",
+      "tagline": "Automate, scale, and deploy with confidence",
+      "category": "Infrastructure",
+      "duration": "5-7 months",
+      "difficulty": "Intermediate",
+      "avgSalary": "10-25 LPA",
+      "color": "from-orange-500 to-amber-400",
+      "jobRoles": ["DevOps Engineer", "Cloud Architect", "SRE", "Platform Engineer", "Infrastructure Engineer"],
+      "companies": ["AWS", "Microsoft Azure", "Google Cloud", "Infosys", "TCS", "Wipro"],
+      "futureScope": "Every company is migrating to cloud. DevOps engineers who master Kubernetes, Terraform, and cloud platforms are among the highest paid in tech. The SRE and Platform Engineering roles are the next evolution with massive growth ahead.",
+      "popularSkills": ["Docker", "Kubernetes", "Terraform", "AWS", "CI/CD", "Linux", "Python"],
+      "syllabus": [
+        {
+          "phase": 1,
+          "title": "Linux & Networking",
+          "duration": "3-4 weeks",
+          "topics": [
+            {
+              "id": "linux",
+              "title": "Linux & Shell Scripting",
+              "subtopics": ["Linux Commands", "Shell Scripting", "File System", "Permissions", "Processes", "Networking Basics"],
+              "resources": [{ "title": "Linux Command", "url": "https://linuxcommand.org", "type": "docs", "isFree": true }],
+              "isCore": true
+            }
+          ]
+        },
+        {
+          "phase": 2,
+          "title": "Containers & Orchestration",
+          "duration": "5-6 weeks",
+          "topics": [
+            {
+              "id": "docker-k8s",
+              "title": "Docker & Kubernetes",
+              "subtopics": ["Docker Images & Containers", "Docker Compose", "Kubernetes Architecture", "Pods & Services", "Helm Charts", "Auto-scaling"],
+              "resources": [
+                { "title": "Docker Docs", "url": "https://docs.docker.com", "type": "docs", "isFree": true },
+                { "title": "Kubernetes Docs", "url": "https://kubernetes.io/docs", "type": "docs", "isFree": true }
+              ],
+              "isCore": true
+            }
+          ]
+        },
+        {
+          "phase": 3,
+          "title": "Cloud Platforms",
+          "duration": "6-8 weeks",
+          "topics": [
+            {
+              "id": "aws",
+              "title": "AWS Core Services",
+              "subtopics": ["EC2", "S3", "RDS", "Lambda", "CloudFront", "IAM", "VPC", "EKS"],
+              "resources": [{ "title": "AWS Docs", "url": "https://docs.aws.amazon.com", "type": "docs", "isFree": true }],
+              "isCore": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cybersecurity",
+      "title": "Cybersecurity",
+      "icon": "🔐",
+      "tagline": "Defend systems, networks, and data from threats",
+      "category": "Security",
+      "duration": "6-8 months",
+      "difficulty": "Intermediate",
+      "avgSalary": "8-24 LPA",
+      "color": "from-red-500 to-rose-400",
+      "jobRoles": ["Security Engineer", "Penetration Tester", "SOC Analyst", "Security Architect"],
+      "companies": ["Palo Alto", "CrowdStrike", "IBM Security", "Wipro", "HCL", "ISRO"],
+      "futureScope": "With cyberattacks costing trillions globally, cybersecurity is a mission-critical field with severe talent shortage. India needs 1M+ cybersecurity professionals by 2025. Bug bounty programs, ethical hacking, and cloud security are making this one of the most rewarding careers.",
+      "popularSkills": ["Network Security", "Penetration Testing", "SIEM", "Python", "Kali Linux", "OWASP"],
+      "syllabus": [
+        {
+          "phase": 1,
+          "title": "Fundamentals",
+          "duration": "4-5 weeks",
+          "topics": [
+            {
+              "id": "security-basics",
+              "title": "Security Fundamentals",
+              "subtopics": ["CIA Triad", "Network Protocols", "Cryptography Basics", "Authentication", "Common Vulnerabilities"],
+              "resources": [],
+              "isCore": true
+            }
+          ]
+        },
+        {
+          "phase": 2,
+          "title": "Ethical Hacking",
+          "duration": "8-10 weeks",
+          "topics": [
+            {
+              "id": "ethical-hacking",
+              "title": "Penetration Testing",
+              "subtopics": ["Reconnaissance", "Scanning & Enumeration", "Exploitation", "Post-Exploitation", "OWASP Top 10", "CTF Challenges"],
+              "resources": [{ "title": "TryHackMe", "url": "https://tryhackme.com", "type": "practice", "isFree": false }],
+              "isCore": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ui-ux-design",
+      "title": "UI/UX Design",
+      "icon": "🎨",
+      "tagline": "Create beautiful, user-centered digital experiences",
+      "category": "Design",
+      "duration": "4-6 months",
+      "difficulty": "Beginner to Advanced",
+      "avgSalary": "6-20 LPA",
+      "color": "from-pink-500 to-fuchsia-400",
+      "jobRoles": ["UI Designer", "UX Designer", "Product Designer", "Interaction Designer"],
+      "companies": ["Adobe", "Figma", "Razorpay", "Swiggy", "Meesho", "Atlassian"],
+      "futureScope": "As digital products multiply, UX has become a core competitive differentiator. Product designers who can bridge design and engineering are among the most valued team members. Specializations like motion design, design systems, and VR/AR UX are opening new frontiers.",
+      "popularSkills": ["Figma", "User Research", "Prototyping", "Design Systems", "Accessibility", "After Effects"],
+      "syllabus": [
+        {
+          "phase": 1,
+          "title": "Design Principles",
+          "duration": "3-4 weeks",
+          "topics": [
+            {
+              "id": "design-principles",
+              "title": "Fundamentals of Design",
+              "subtopics": ["Typography", "Color Theory", "Grid Systems", "Gestalt Principles", "Visual Hierarchy"],
+              "resources": [],
+              "isCore": true
+            }
+          ]
+        },
+        {
+          "phase": 2,
+          "title": "UX Research & Process",
+          "duration": "5-6 weeks",
+          "topics": [
+            {
+              "id": "ux-research",
+              "title": "UX Research",
+              "subtopics": ["User Interviews", "Personas", "User Journey Mapping", "Wireframing", "Usability Testing", "A/B Testing"],
+              "resources": [],
+              "isCore": true
+            }
+          ]
+        },
+        {
+          "phase": 3,
+          "title": "Figma & Prototyping",
+          "duration": "4-5 weeks",
+          "topics": [
+            {
+              "id": "figma",
+              "title": "Figma Mastery",
+              "subtopics": ["Components & Variants", "Auto Layout", "Prototyping", "Design Systems", "Dev Handoff", "Plugins"],
+              "resources": [{ "title": "Figma Learn", "url": "https://help.figma.com/hc/en-us/categories/360002051613", "type": "docs", "isFree": true }],
+              "isCore": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blockchain",
+      "title": "Blockchain & Web3",
+      "icon": "⛓️",
+      "tagline": "Build decentralized applications of the future",
+      "category": "Web3",
+      "duration": "5-7 months",
+      "difficulty": "Advanced",
+      "avgSalary": "12-40 LPA",
+      "color": "from-yellow-500 to-orange-400",
+      "jobRoles": ["Blockchain Developer", "Smart Contract Engineer", "Web3 Developer", "DeFi Engineer"],
+      "companies": ["Polygon", "Coinbase", "Binance", "WazirX", "CoinDCX", "ConsenSys"],
+      "futureScope": "Despite market cycles, blockchain infrastructure is being adopted by global financial institutions, governments, and enterprises. Smart contract developers and Web3 engineers who understand DeFi, NFTs, and cross-chain protocols command premium salaries globally.",
+      "popularSkills": ["Solidity", "Ethereum", "Web3.js", "Hardhat", "IPFS", "Rust (Solana)"],
+      "syllabus": [
+        {
+          "phase": 1,
+          "title": "Blockchain Fundamentals",
+          "duration": "3-4 weeks",
+          "topics": [
+            {
+              "id": "blockchain-basics",
+              "title": "Blockchain Concepts",
+              "subtopics": ["Distributed Ledger", "Consensus Mechanisms", "Cryptographic Hashing", "Public/Private Keys", "Bitcoin vs Ethereum"],
+              "resources": [],
+              "isCore": true
+            }
+          ]
+        },
+        {
+          "phase": 2,
+          "title": "Smart Contracts",
+          "duration": "6-8 weeks",
+          "topics": [
+            {
+              "id": "solidity",
+              "title": "Solidity & Smart Contracts",
+              "subtopics": ["Solidity Syntax", "ERC Standards (20/721)", "Gas Optimization", "Security Patterns", "Hardhat Testing"],
+              "resources": [{ "title": "Solidity Docs", "url": "https://docs.soliditylang.org", "type": "docs", "isFree": true }],
+              "isCore": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ios-dev",
+      "title": "iOS Development",
+      "icon": "🍎",
+      "tagline": "Craft premium apps for iPhone and iPad",
+      "category": "Mobile",
+      "duration": "5-7 months",
+      "difficulty": "Intermediate",
+      "avgSalary": "8-22 LPA",
+      "color": "from-slate-600 to-slate-400",
+      "jobRoles": ["iOS Developer", "Swift Developer", "Apple Platform Engineer"],
+      "companies": ["Apple", "Infosys", "TCS", "Myntra", "PhonePe", "Dream11"],
+      "futureScope": "iOS developers target the premium user segment with higher spending power. With Apple's push into AR/VR with Vision Pro, SwiftUI, and cross-platform tools, iOS dev skills are evolving rapidly. Premium app markets on iOS continue to grow year-over-year.",
+      "popularSkills": ["Swift", "SwiftUI", "UIKit", "Core Data", "Xcode", "Combine"],
+      "syllabus": [
+        {
+          "phase": 1,
+          "title": "Swift Fundamentals",
+          "duration": "4-5 weeks",
+          "topics": [
+            {
+              "id": "swift",
+              "title": "Swift Programming",
+              "subtopics": ["Optionals", "Protocols", "Generics", "Closures", "Concurrency (async/await)", "Error Handling"],
+              "resources": [{ "title": "Swift.org", "url": "https://swift.org/documentation", "type": "docs", "isFree": true }],
+              "isCore": true
+            }
+          ]
+        },
+        {
+          "phase": 2,
+          "title": "SwiftUI & UIKit",
+          "duration": "6-8 weeks",
+          "topics": [
+            {
+              "id": "swiftui",
+              "title": "SwiftUI",
+              "subtopics": ["Views & Modifiers", "State Management", "Navigation", "Animations", "Data Flow", "MVVM Pattern"],
+              "resources": [{ "title": "Apple Developer", "url": "https://developer.apple.com/tutorials/swiftui", "type": "docs", "isFree": true }],
+              "isCore": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

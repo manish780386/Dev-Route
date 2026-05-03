@@ -1,0 +1,524 @@
+{
+  "roadmaps": [
+    {
+      "id": "frontend-dev",
+      "title": "Frontend Developer",
+      "icon": "🖥️",
+      "description": "Complete path from HTML basics to production-ready React applications",
+      "totalDuration": "5-6 months",
+      "level": "Beginner to Advanced",
+      "color": "from-blue-500 to-cyan-400",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Internet & Web Basics",
+          "description": "Understand how the web works before writing a single line of code.",
+          "status": "required",
+          "estimatedTime": "1 week",
+          "subtopics": [
+            { "title": "How does the internet work?", "description": "TCP/IP, DNS, HTTP/HTTPS protocols" },
+            { "title": "How browsers render pages", "description": "DOM, CSSOM, render tree, reflow & repaint" },
+            { "title": "Client vs Server", "description": "What runs where and why it matters" }
+          ],
+          "resources": [
+            { "title": "MDN: How the web works", "url": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works", "type": "article", "isFree": true }
+          ],
+          "nextSteps": [2]
+        },
+        {
+          "id": 2,
+          "title": "HTML5",
+          "description": "Structure web content with semantic, accessible HTML.",
+          "status": "required",
+          "estimatedTime": "2 weeks",
+          "subtopics": [
+            { "title": "Semantic Elements", "description": "header, main, article, section, aside, footer" },
+            { "title": "Forms & Validation", "description": "Input types, constraints, accessibility" },
+            { "title": "Accessibility (a11y)", "description": "ARIA roles, keyboard navigation" },
+            { "title": "SEO Basics", "description": "Meta tags, Open Graph, structured data" }
+          ],
+          "resources": [
+            { "title": "HTML Full Course - freeCodeCamp", "url": "https://www.freecodecamp.org", "type": "video", "isFree": true }
+          ],
+          "nextSteps": [3]
+        },
+        {
+          "id": 3,
+          "title": "CSS3 & Modern Layouts",
+          "description": "Style and layout web pages with modern CSS techniques.",
+          "status": "required",
+          "estimatedTime": "3 weeks",
+          "subtopics": [
+            { "title": "Flexbox", "description": "One-dimensional layout model mastery" },
+            { "title": "CSS Grid", "description": "Two-dimensional grid systems" },
+            { "title": "Responsive Design", "description": "Media queries, mobile-first approach" },
+            { "title": "CSS Variables & Custom Properties", "description": "Design tokens and theming" },
+            { "title": "Animations & Transitions", "description": "keyframes, transform, transition" }
+          ],
+          "resources": [
+            { "title": "CSS-Tricks Complete Guide to Flexbox", "url": "https://css-tricks.com/snippets/css/a-guide-to-flexbox", "type": "article", "isFree": true }
+          ],
+          "nextSteps": [4]
+        },
+        {
+          "id": 4,
+          "title": "JavaScript (ES6+)",
+          "description": "The core language of the web. Master it deeply.",
+          "status": "required",
+          "estimatedTime": "5-6 weeks",
+          "subtopics": [
+            { "title": "Fundamentals", "description": "Variables, types, operators, control flow" },
+            { "title": "Functions & Closures", "description": "Scope, hoisting, closures, IIFE" },
+            { "title": "Async JS", "description": "Callbacks → Promises → async/await" },
+            { "title": "DOM & Events", "description": "Querying, manipulation, event delegation" },
+            { "title": "ES6+ Features", "description": "Destructuring, spread, modules, optional chaining" },
+            { "title": "Fetch API & AJAX", "description": "Making HTTP requests from the browser" }
+          ],
+          "resources": [
+            { "title": "javascript.info", "url": "https://javascript.info", "type": "docs", "isFree": true },
+            { "title": "Eloquent JavaScript", "url": "https://eloquentjavascript.net", "type": "book", "isFree": true }
+          ],
+          "nextSteps": [5, 6]
+        },
+        {
+          "id": 5,
+          "title": "TypeScript",
+          "description": "Add static typing to JavaScript for safer, scalable code.",
+          "status": "required",
+          "estimatedTime": "2 weeks",
+          "subtopics": [
+            { "title": "Types & Interfaces", "description": "Primitive types, object shapes, unions" },
+            { "title": "Generics", "description": "Reusable typed components and functions" },
+            { "title": "Type Narrowing", "description": "typeof, instanceof, discriminated unions" },
+            { "title": "Utility Types", "description": "Partial, Required, Pick, Omit, ReturnType" }
+          ],
+          "resources": [
+            { "title": "TypeScript Handbook", "url": "https://www.typescriptlang.org/docs/handbook/intro.html", "type": "docs", "isFree": true }
+          ],
+          "nextSteps": [7]
+        },
+        {
+          "id": 6,
+          "title": "Version Control with Git",
+          "description": "Track changes, collaborate, and manage code history.",
+          "status": "required",
+          "estimatedTime": "1 week",
+          "subtopics": [
+            { "title": "Git Basics", "description": "init, add, commit, log, diff" },
+            { "title": "Branching & Merging", "description": "branch, merge, rebase, cherry-pick" },
+            { "title": "GitHub Flow", "description": "Pull requests, code review, CI/CD basics" }
+          ],
+          "resources": [
+            { "title": "Pro Git Book", "url": "https://git-scm.com/book/en/v2", "type": "book", "isFree": true }
+          ],
+          "nextSteps": [7]
+        },
+        {
+          "id": 7,
+          "title": "React",
+          "description": "Build interactive UIs with the world's most popular frontend library.",
+          "status": "required",
+          "estimatedTime": "6-8 weeks",
+          "subtopics": [
+            { "title": "Components & JSX", "description": "Functional components, props, children" },
+            { "title": "Hooks", "description": "useState, useEffect, useRef, useMemo, useCallback, useContext" },
+            { "title": "State Management", "description": "Context API, Zustand, Redux Toolkit" },
+            { "title": "React Router", "description": "Client-side routing, nested routes, loaders" },
+            { "title": "Performance", "description": "React.memo, lazy loading, code splitting" },
+            { "title": "Testing", "description": "React Testing Library, Vitest" }
+          ],
+          "resources": [
+            { "title": "React Official Docs", "url": "https://react.dev", "type": "docs", "isFree": true }
+          ],
+          "nextSteps": [8, 9]
+        },
+        {
+          "id": 8,
+          "title": "Build Tools & Tooling",
+          "description": "Understand the modern frontend build ecosystem.",
+          "status": "required",
+          "estimatedTime": "1 week",
+          "subtopics": [
+            { "title": "Vite", "description": "Lightning-fast dev server and bundler" },
+            { "title": "ESLint & Prettier", "description": "Code linting and formatting" },
+            { "title": "npm/pnpm/yarn", "description": "Package management and scripts" }
+          ],
+          "resources": [],
+          "nextSteps": [10]
+        },
+        {
+          "id": 9,
+          "title": "CSS Frameworks",
+          "description": "Accelerate UI development with utility-first CSS.",
+          "status": "recommended",
+          "estimatedTime": "1-2 weeks",
+          "subtopics": [
+            { "title": "Tailwind CSS", "description": "Utility-first, JIT compiler, responsive design" },
+            { "title": "shadcn/ui", "description": "Copy-paste accessible component library" }
+          ],
+          "resources": [
+            { "title": "Tailwind CSS Docs", "url": "https://tailwindcss.com/docs", "type": "docs", "isFree": true }
+          ],
+          "nextSteps": [10]
+        },
+        {
+          "id": 10,
+          "title": "Deployment & Web Performance",
+          "description": "Ship your projects and make them blazing fast.",
+          "status": "required",
+          "estimatedTime": "1 week",
+          "subtopics": [
+            { "title": "Vercel / Netlify Deployment", "description": "Zero-config deploy from GitHub" },
+            { "title": "Core Web Vitals", "description": "LCP, FID, CLS optimization" },
+            { "title": "Lighthouse & DevTools", "description": "Profiling and performance auditing" }
+          ],
+          "resources": [],
+          "nextSteps": []
+        }
+      ]
+    },
+    {
+      "id": "data-science-roadmap",
+      "title": "Data Science",
+      "icon": "📊",
+      "description": "From Python basics to building and deploying ML models in production",
+      "totalDuration": "7-9 months",
+      "level": "Beginner to Advanced",
+      "color": "from-emerald-500 to-teal-400",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Python Programming",
+          "description": "Python is the language of data science. Get rock-solid fundamentals.",
+          "status": "required",
+          "estimatedTime": "3-4 weeks",
+          "subtopics": [
+            { "title": "Python Basics", "description": "Variables, loops, functions, OOP" },
+            { "title": "Data Structures", "description": "Lists, dicts, sets, tuples — when to use what" },
+            { "title": "File I/O", "description": "Reading CSV, JSON, XML files" },
+            { "title": "Libraries Overview", "description": "pip, virtual environments, Jupyter Notebooks" }
+          ],
+          "resources": [
+            { "title": "Python.org Official Tutorial", "url": "https://docs.python.org/3/tutorial", "type": "docs", "isFree": true }
+          ],
+          "nextSteps": [2]
+        },
+        {
+          "id": 2,
+          "title": "Statistics & Probability",
+          "description": "The mathematical backbone of all data science.",
+          "status": "required",
+          "estimatedTime": "3-4 weeks",
+          "subtopics": [
+            { "title": "Descriptive Statistics", "description": "Mean, median, mode, variance, std dev" },
+            { "title": "Probability Theory", "description": "Bayes theorem, conditional probability, distributions" },
+            { "title": "Hypothesis Testing", "description": "t-tests, chi-squared, p-values, confidence intervals" },
+            { "title": "Correlation & Causation", "description": "Pearson, Spearman, common pitfalls" }
+          ],
+          "resources": [],
+          "nextSteps": [3]
+        },
+        {
+          "id": 3,
+          "title": "NumPy & Pandas",
+          "description": "Core libraries for numerical computing and data manipulation.",
+          "status": "required",
+          "estimatedTime": "3-4 weeks",
+          "subtopics": [
+            { "title": "NumPy Arrays", "description": "ndarray operations, broadcasting, indexing" },
+            { "title": "Pandas DataFrames", "description": "Loading data, filtering, groupby, merging" },
+            { "title": "Data Cleaning", "description": "Handling nulls, duplicates, outliers, encoding" },
+            { "title": "Time Series", "description": "DatetimeIndex, resampling, rolling windows" }
+          ],
+          "resources": [
+            { "title": "Pandas User Guide", "url": "https://pandas.pydata.org/docs/user_guide", "type": "docs", "isFree": true }
+          ],
+          "nextSteps": [4]
+        },
+        {
+          "id": 4,
+          "title": "Data Visualization",
+          "description": "Communicate insights visually and tell stories with data.",
+          "status": "required",
+          "estimatedTime": "2-3 weeks",
+          "subtopics": [
+            { "title": "Matplotlib", "description": "Line, bar, scatter, histogram plots" },
+            { "title": "Seaborn", "description": "Statistical visualization, heatmaps, pairplots" },
+            { "title": "Plotly", "description": "Interactive charts and dashboards" },
+            { "title": "Storytelling with Data", "description": "Chart selection, color theory, annotations" }
+          ],
+          "resources": [],
+          "nextSteps": [5]
+        },
+        {
+          "id": 5,
+          "title": "Machine Learning with Scikit-learn",
+          "description": "Apply classical ML algorithms to real-world datasets.",
+          "status": "required",
+          "estimatedTime": "5-6 weeks",
+          "subtopics": [
+            { "title": "Supervised Learning", "description": "Regression, classification algorithms" },
+            { "title": "Unsupervised Learning", "description": "Clustering, dimensionality reduction" },
+            { "title": "Model Evaluation", "description": "Cross-validation, metrics, confusion matrix" },
+            { "title": "Feature Engineering", "description": "Encoding, scaling, selection, creation" },
+            { "title": "Pipelines", "description": "Building reproducible ML workflows" }
+          ],
+          "resources": [
+            { "title": "Scikit-learn User Guide", "url": "https://scikit-learn.org/stable/user_guide.html", "type": "docs", "isFree": true }
+          ],
+          "nextSteps": [6, 7]
+        },
+        {
+          "id": 6,
+          "title": "SQL & Databases",
+          "description": "Query and manage structured data — an essential data science skill.",
+          "status": "required",
+          "estimatedTime": "2-3 weeks",
+          "subtopics": [
+            { "title": "SQL Basics", "description": "SELECT, WHERE, JOIN, GROUP BY, HAVING" },
+            { "title": "Window Functions", "description": "RANK, ROW_NUMBER, LAG, LEAD, PARTITION BY" },
+            { "title": "Database Design", "description": "Normalization, ERDs, indexes" }
+          ],
+          "resources": [],
+          "nextSteps": [8]
+        },
+        {
+          "id": 7,
+          "title": "Deep Learning Basics",
+          "description": "Neural networks for image, text, and complex pattern recognition.",
+          "status": "recommended",
+          "estimatedTime": "4-5 weeks",
+          "subtopics": [
+            { "title": "Neural Network Basics", "description": "Layers, activation functions, backpropagation" },
+            { "title": "TensorFlow / PyTorch", "description": "Framework basics, model building" },
+            { "title": "CNNs", "description": "Image classification and object detection" }
+          ],
+          "resources": [
+            { "title": "fast.ai Practical Deep Learning", "url": "https://course.fast.ai", "type": "video", "isFree": true }
+          ],
+          "nextSteps": [8]
+        },
+        {
+          "id": 8,
+          "title": "MLOps & Deployment",
+          "description": "Take models from Jupyter notebook to production systems.",
+          "status": "recommended",
+          "estimatedTime": "3-4 weeks",
+          "subtopics": [
+            { "title": "Model Serving", "description": "FastAPI, Flask for ML APIs" },
+            { "title": "MLflow", "description": "Experiment tracking and model registry" },
+            { "title": "Docker for ML", "description": "Containerizing ML models" },
+            { "title": "Cloud ML", "description": "AWS SageMaker, GCP Vertex AI basics" }
+          ],
+          "resources": [],
+          "nextSteps": []
+        }
+      ]
+    },
+    {
+      "id": "backend-dev",
+      "title": "Backend Developer",
+      "icon": "⚙️",
+      "description": "Build scalable APIs, databases, and server-side systems",
+      "totalDuration": "5-7 months",
+      "level": "Intermediate",
+      "color": "from-violet-500 to-purple-400",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Pick a Language",
+          "description": "Choose your primary backend language. Node.js + TypeScript is recommended for most.",
+          "status": "required",
+          "estimatedTime": "2-3 weeks",
+          "subtopics": [
+            { "title": "Node.js + TypeScript", "description": "Best for full-stack JS devs, large ecosystem" },
+            { "title": "Python + FastAPI", "description": "Best for data-heavy or ML-adjacent backends" },
+            { "title": "Java + Spring Boot", "description": "Enterprise standard, highest paying in India" },
+            { "title": "Go", "description": "High performance, microservices" }
+          ],
+          "resources": [],
+          "nextSteps": [2]
+        },
+        {
+          "id": 2,
+          "title": "HTTP & REST API Design",
+          "description": "Master the protocol and patterns that power every modern API.",
+          "status": "required",
+          "estimatedTime": "2 weeks",
+          "subtopics": [
+            { "title": "HTTP Methods & Status Codes", "description": "GET, POST, PUT, PATCH, DELETE — when to use each" },
+            { "title": "RESTful Principles", "description": "Resources, endpoints, versioning, HATEOAS" },
+            { "title": "Request/Response Lifecycle", "description": "Headers, body, content negotiation" },
+            { "title": "API Documentation", "description": "OpenAPI/Swagger spec writing" }
+          ],
+          "resources": [],
+          "nextSteps": [3]
+        },
+        {
+          "id": 3,
+          "title": "Databases",
+          "description": "Choose and master the right database for each use case.",
+          "status": "required",
+          "estimatedTime": "4-5 weeks",
+          "subtopics": [
+            { "title": "SQL (PostgreSQL)", "description": "ACID, joins, indexes, query optimization" },
+            { "title": "NoSQL (MongoDB)", "description": "Documents, aggregation, use cases" },
+            { "title": "Redis", "description": "Caching, pub/sub, sessions" },
+            { "title": "ORMs", "description": "Prisma, Sequelize, TypeORM" },
+            { "title": "Database Design", "description": "Normalization, schema design, migrations" }
+          ],
+          "resources": [],
+          "nextSteps": [4]
+        },
+        {
+          "id": 4,
+          "title": "Authentication & Security",
+          "description": "Secure your APIs — this is non-negotiable.",
+          "status": "required",
+          "estimatedTime": "2-3 weeks",
+          "subtopics": [
+            { "title": "JWT Authentication", "description": "Access/refresh tokens, token rotation" },
+            { "title": "OAuth 2.0 & OIDC", "description": "Social login, third-party auth" },
+            { "title": "RBAC", "description": "Role-based access control patterns" },
+            { "title": "API Security", "description": "Rate limiting, input validation, CORS, SQL injection prevention" }
+          ],
+          "resources": [],
+          "nextSteps": [5]
+        },
+        {
+          "id": 5,
+          "title": "System Design Basics",
+          "description": "Design systems that scale — critical for senior roles and interviews.",
+          "status": "required",
+          "estimatedTime": "3-4 weeks",
+          "subtopics": [
+            { "title": "Load Balancing", "description": "Round-robin, least connections, health checks" },
+            { "title": "Caching Strategies", "description": "CDN, Redis, cache invalidation" },
+            { "title": "Message Queues", "description": "RabbitMQ, Kafka for async processing" },
+            { "title": "Microservices vs Monolith", "description": "When to split, communication patterns" }
+          ],
+          "resources": [],
+          "nextSteps": [6]
+        },
+        {
+          "id": 6,
+          "title": "Testing & Documentation",
+          "description": "Production-grade code requires comprehensive testing.",
+          "status": "required",
+          "estimatedTime": "2 weeks",
+          "subtopics": [
+            { "title": "Unit Testing", "description": "Jest, Vitest, pytest" },
+            { "title": "Integration Testing", "description": "Supertest, API test suites" },
+            { "title": "API Documentation", "description": "Swagger UI, Postman collections" }
+          ],
+          "resources": [],
+          "nextSteps": []
+        }
+      ]
+    },
+    {
+      "id": "devops-roadmap",
+      "title": "DevOps Engineer",
+      "icon": "🚀",
+      "description": "Automate infrastructure, deployments, and operations at scale",
+      "totalDuration": "6-8 months",
+      "level": "Intermediate to Advanced",
+      "color": "from-orange-500 to-amber-400",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Linux & Networking Fundamentals",
+          "description": "Everything in DevOps runs on Linux. Master it first.",
+          "status": "required",
+          "estimatedTime": "3-4 weeks",
+          "subtopics": [
+            { "title": "Linux CLI", "description": "File system, permissions, processes, package management" },
+            { "title": "Shell Scripting", "description": "Bash scripts for automation" },
+            { "title": "Networking", "description": "TCP/IP, DNS, HTTP, firewalls, load balancers" },
+            { "title": "SSH & Security", "description": "Keys, tunneling, hardening" }
+          ],
+          "resources": [],
+          "nextSteps": [2]
+        },
+        {
+          "id": 2,
+          "title": "Version Control & GitOps",
+          "description": "Git is the backbone of modern DevOps workflows.",
+          "status": "required",
+          "estimatedTime": "1-2 weeks",
+          "subtopics": [
+            { "title": "Advanced Git", "description": "Rebasing, cherry-pick, bisect, hooks" },
+            { "title": "GitFlow / Trunk-based", "description": "Branching strategies for teams" },
+            { "title": "GitOps", "description": "Infrastructure as code via Git" }
+          ],
+          "resources": [],
+          "nextSteps": [3]
+        },
+        {
+          "id": 3,
+          "title": "Docker & Containers",
+          "description": "Containers are the foundation of modern deployment.",
+          "status": "required",
+          "estimatedTime": "3-4 weeks",
+          "subtopics": [
+            { "title": "Docker Basics", "description": "Images, containers, volumes, networks" },
+            { "title": "Dockerfile Best Practices", "description": "Multi-stage builds, layer caching" },
+            { "title": "Docker Compose", "description": "Multi-container applications" },
+            { "title": "Container Security", "description": "Non-root users, image scanning" }
+          ],
+          "resources": [
+            { "title": "Docker Official Docs", "url": "https://docs.docker.com", "type": "docs", "isFree": true }
+          ],
+          "nextSteps": [4]
+        },
+        {
+          "id": 4,
+          "title": "CI/CD Pipelines",
+          "description": "Automate testing and deployment with modern CI/CD tools.",
+          "status": "required",
+          "estimatedTime": "3-4 weeks",
+          "subtopics": [
+            { "title": "GitHub Actions", "description": "Workflows, jobs, secrets, matrix builds" },
+            { "title": "Jenkins", "description": "Enterprise CI/CD, declarative pipelines" },
+            { "title": "Pipeline Design", "description": "Build → Test → Scan → Deploy patterns" }
+          ],
+          "resources": [],
+          "nextSteps": [5]
+        },
+        {
+          "id": 5,
+          "title": "Kubernetes",
+          "description": "Orchestrate containers at scale — the most critical DevOps skill.",
+          "status": "required",
+          "estimatedTime": "6-8 weeks",
+          "subtopics": [
+            { "title": "K8s Architecture", "description": "Control plane, nodes, etcd, API server" },
+            { "title": "Core Objects", "description": "Pods, Deployments, Services, ConfigMaps, Secrets" },
+            { "title": "Helm Charts", "description": "Package and deploy K8s applications" },
+            { "title": "Auto-scaling", "description": "HPA, VPA, cluster autoscaler" },
+            { "title": "Monitoring", "description": "Prometheus + Grafana stack" }
+          ],
+          "resources": [
+            { "title": "Kubernetes Official Docs", "url": "https://kubernetes.io/docs/home", "type": "docs", "isFree": true }
+          ],
+          "nextSteps": [6]
+        },
+        {
+          "id": 6,
+          "title": "Cloud Platform (AWS)",
+          "description": "Deploy and manage applications on AWS — the market leader.",
+          "status": "required",
+          "estimatedTime": "5-6 weeks",
+          "subtopics": [
+            { "title": "Core Services", "description": "EC2, S3, RDS, Lambda, ECS/EKS" },
+            { "title": "Networking", "description": "VPC, subnets, security groups, Route 53" },
+            { "title": "IAM & Security", "description": "Roles, policies, least privilege" },
+            { "title": "Terraform", "description": "Infrastructure as Code for AWS resources" }
+          ],
+          "resources": [],
+          "nextSteps": []
+        }
+      ]
+    }
+  ]
+}

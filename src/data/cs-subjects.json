@@ -1,0 +1,284 @@
+{
+  "subjects": [
+    {
+      "id": "dsa",
+      "title": "Data Structures & Algorithms",
+      "icon": "🧠",
+      "tagline": "The single most important topic for any tech interview",
+      "importance": "Asked in 100% of product company interviews. Master this first.",
+      "color": "from-blue-500 to-indigo-400",
+      "chapters": [
+        {
+          "id": "complexity",
+          "title": "Time & Space Complexity",
+          "description": "Analyze algorithm efficiency",
+          "topics": ["Big O Notation", "Best/Average/Worst Case", "Space Complexity", "Amortized Analysis"],
+          "questions": [
+            { "id": "c1", "question": "What is the time complexity of binary search?", "answer": "O(log n) — Binary search halves the search space at each step. Starting with n elements, after k steps we have n/2^k elements. When n/2^k = 1, k = log₂n. Hence O(log n) time with O(1) space (iterative) or O(log n) space (recursive call stack).", "difficulty": "easy", "tags": ["complexity", "binary-search"] },
+            { "id": "c2", "question": "Explain the difference between O(n log n) and O(n²).", "answer": "For n=1000: O(n log n) ≈ 10,000 operations while O(n²) = 1,000,000 — a 100x difference. Merge sort is O(n log n); bubble sort is O(n²). At n=1,000,000: O(n log n) ≈ 20M vs O(n²) = 1 trillion. This gap is why algorithm choice is critical at scale.", "difficulty": "medium", "tags": ["complexity", "sorting"] },
+            { "id": "c3", "question": "What is amortized time complexity? Give an example.", "answer": "Amortized analysis gives average cost per operation over a sequence, even if some individual operations are expensive. Example: Dynamic array push() — most are O(1) but occasionally triggers O(n) resize that doubles capacity. Amortized cost = O(1) per push because each element moves at most once on average. Used for ArrayList, deque, union-find with path compression.", "difficulty": "hard", "tags": ["complexity", "amortized"] },
+            { "id": "c4", "question": "What is the space complexity of recursive DFS on a graph?", "answer": "O(V) auxiliary space — the recursion stack can go as deep as V vertices (in a linear chain/path graph). Plus O(V) for visited array. Total auxiliary: O(V). Note: the graph itself takes O(V + E) to store, but that's input space, not auxiliary. Iterative DFS using explicit stack also uses O(V) in worst case.", "difficulty": "medium", "tags": ["complexity", "recursion", "graph"] }
+          ]
+        },
+        {
+          "id": "arrays-strings",
+          "title": "Arrays & Strings",
+          "description": "Foundation of all data structure problems",
+          "topics": ["Two Pointers", "Sliding Window", "Prefix Sums", "Kadane's Algorithm", "String Hashing"],
+          "questions": [
+            { "id": "as1", "question": "Explain the sliding window technique with a use case.", "answer": "Sliding window maintains a subset of elements and slides across the array. Instead of recomputing from scratch, add the incoming element and remove the outgoing one. Use case: Maximum sum subarray of size k — naive O(nk), sliding window O(n). Also: longest substring without repeating chars, minimum window substring, max consecutive 1s with k flips.", "difficulty": "medium", "tags": ["arrays", "sliding-window"] },
+            { "id": "as2", "question": "What is Kadane's algorithm?", "answer": "Solves Maximum Subarray Sum in O(n). Key insight: max subarray ending at index i is either the current element alone, or current element + max subarray ending at i-1. Track running_max = max(arr[i], running_max + arr[i]) and global_max = max(global_max, running_max). Edge case: all negative numbers — global_max initializes to arr[0], not 0.", "difficulty": "medium", "tags": ["arrays", "dp", "kadane"] },
+            { "id": "as3", "question": "How do you find all pairs in an array that sum to a target?", "answer": "Brute force: O(n²). Better: O(n) with HashMap — for each element x, check if (target - x) exists in map, then add x to map. Two-pointer works if array is sorted: start l=0, r=n-1, if sum < target move l right, if sum > target move r left. HashMap approach is preferred for unsorted input.", "difficulty": "easy", "tags": ["arrays", "hashmap", "two-pointers"] },
+            { "id": "as4", "question": "Explain prefix sum array and when to use it.", "answer": "Prefix sum: prefix[i] = sum of arr[0..i]. Build in O(n). Then any range sum arr[l..r] = prefix[r] - prefix[l-1] in O(1). Use when: multiple range sum queries on same array, subarray sum equals k (combine with hashmap: count of prefix[j] - prefix[i] == k), 2D matrix range queries. Without prefix: O(n) per query. With prefix: O(1) per query after O(n) build.", "difficulty": "medium", "tags": ["arrays", "prefix-sum"] }
+          ]
+        },
+        {
+          "id": "linked-lists",
+          "title": "Linked Lists",
+          "description": "Dynamic data structure with pointer-based connections",
+          "topics": ["Singly & Doubly Linked Lists", "Fast & Slow Pointers", "Reversal", "Cycle Detection", "Merge Sorted Lists"],
+          "questions": [
+            { "id": "ll1", "question": "How do you detect a cycle in a linked list?", "answer": "Floyd's Cycle Detection (Tortoise & Hare): slow pointer moves 1 step, fast moves 2 steps. If they meet → cycle exists. Time: O(n), Space: O(1). To find cycle START: reset slow to head after detection, move both 1 step at a time — they meet exactly at cycle entry. Math: if cycle start is k steps from head and meeting point is h steps into cycle, then head-to-start = meeting-point-to-start (mod cycle length).", "difficulty": "medium", "tags": ["linked-list", "two-pointers", "cycle"] },
+            { "id": "ll2", "question": "How do you reverse a linked list iteratively?", "answer": "Three pointers: prev=null, curr=head, next=null. Loop while curr != null: save next=curr.next, set curr.next=prev, advance prev=curr, advance curr=next. Return prev as new head. Time: O(n), Space: O(1). Recursive version has O(n) stack space — iterative is preferred for production code.", "difficulty": "easy", "tags": ["linked-list", "reversal"] },
+            { "id": "ll3", "question": "How do you find the middle of a linked list in one pass?", "answer": "Two pointers: slow and fast, both start at head. Move slow 1 step, fast 2 steps. When fast reaches null (or fast.next is null), slow is at middle. For even-length list: slow lands at second middle. Time: O(n), Space: O(1). This is used in merge sort for linked lists to split the list in half.", "difficulty": "easy", "tags": ["linked-list", "two-pointers"] }
+          ]
+        },
+        {
+          "id": "trees",
+          "title": "Trees & Binary Trees",
+          "description": "Hierarchical structures powering search, databases, and compilers",
+          "topics": ["Binary Tree Traversals", "BST Operations", "Height & Diameter", "LCA", "Heaps", "Trie"],
+          "questions": [
+            { "id": "t1", "question": "What are the four tree traversal orders and when to use each?", "answer": "Inorder (L→Root→R): BST gives sorted output — use for sorted traversal, validating BST. Preorder (Root→L→R): Serialize/clone a tree, prefix expressions, top-down processing. Postorder (L→R→Root): Delete tree (delete children before parent), directory sizes, postfix expressions. Level Order (BFS): Shortest path, print by levels, find cousins, zigzag traversal. All traversals: O(n) time, O(h) space where h = height.", "difficulty": "medium", "tags": ["trees", "traversal"] },
+            { "id": "t2", "question": "What is the difference between a Binary Tree and a BST?", "answer": "Binary Tree: each node has at most 2 children — no ordering constraint. BST: all left subtree values < node < all right subtree values. BST enables O(h) search, insert, delete. Balanced BST (AVL, Red-Black Tree): h = O(log n), so operations = O(log n). Unbalanced BST (sorted insertion): degrades to O(n) — essentially a linked list. Use BST when you need sorted data + O(log n) operations.", "difficulty": "easy", "tags": ["trees", "bst"] },
+            { "id": "t3", "question": "How do you find the Lowest Common Ancestor (LCA) of two nodes?", "answer": "For BST: at each node, if both targets < node → go left; if both > node → go right; else current node is LCA. O(h). For general Binary Tree: recursive — if node matches p or q, return node. If both left and right return non-null, current node is LCA. If one side returns null, the other side's result bubbles up. O(n) time and space.", "difficulty": "hard", "tags": ["trees", "lca"] },
+            { "id": "t4", "question": "Explain how a Min-Heap works and its time complexities.", "answer": "Min-Heap: complete binary tree where parent ≤ children. Root = minimum. Stored as array: parent of i = (i-1)/2, children at 2i+1 and 2i+2. Insert: add at end, heapify-up (swap with parent while smaller) — O(log n). Extract-min: swap root with last, remove last, heapify-down — O(log n). Peek min: O(1). Build heap from array: O(n) (not O(n log n)). Applications: priority queues, Dijkstra's, heap sort, top-K problems.", "difficulty": "medium", "tags": ["trees", "heap"] }
+          ]
+        },
+        {
+          "id": "dynamic-programming",
+          "title": "Dynamic Programming",
+          "description": "Optimize recursive problems by storing subproblem solutions",
+          "topics": ["Memoization", "Tabulation", "1D DP", "2D DP", "Knapsack", "LCS", "LIS"],
+          "questions": [
+            { "id": "dp1", "question": "What is the difference between memoization and tabulation?", "answer": "Memoization (Top-Down): Start with original problem, recurse, cache results in map/array. Natural to code from recursive solution. Only computes needed subproblems. Stack overflow risk for deep recursion. Tabulation (Bottom-Up): Iteratively build from base cases. No recursion stack overhead. All subproblems computed regardless of need. Usually faster in practice. Both achieve same time complexity. Fibonacci: Memoization recurses from fib(n) down; Tabulation builds fib[0] to fib[n] up.", "difficulty": "medium", "tags": ["dp", "memoization"] },
+            { "id": "dp2", "question": "Explain the 0/1 Knapsack problem and DP solution.", "answer": "Maximize value selecting items with weights/values given capacity W. Each item either taken or not. DP[i][w] = max value using first i items with capacity w. Transition: if weight[i] > w → DP[i][w] = DP[i-1][w]. Else → max(DP[i-1][w], DP[i-1][w-weight[i]] + value[i]). Time: O(n×W), Space: O(n×W), optimizable to O(W) by iterating w in reverse. Variants: unbounded knapsack (items reusable), fractional knapsack (greedy suffices).", "difficulty": "hard", "tags": ["dp", "knapsack"] },
+            { "id": "dp3", "question": "How do you find the Longest Increasing Subsequence (LIS)?", "answer": "DP approach: dp[i] = LIS ending at index i. For each i, check all j < i where arr[j] < arr[i] and take max(dp[j]) + 1. Time: O(n²), Space: O(n). Optimized with binary search + patience sorting: O(n log n). Maintain array 'tails' where tails[i] = smallest tail of all increasing subsequences of length i+1. For each element, binary search for its position in tails. Length of tails at end = LIS length.", "difficulty": "hard", "tags": ["dp", "lis"] }
+          ]
+        },
+        {
+          "id": "graphs",
+          "title": "Graphs",
+          "description": "Network problems — social graphs, shortest paths, dependencies",
+          "topics": ["BFS & DFS", "Dijkstra", "Topological Sort", "Union-Find", "MST", "Bellman-Ford"],
+          "questions": [
+            { "id": "g1", "question": "When to use BFS vs DFS?", "answer": "BFS: Shortest path in UNWEIGHTED graph (level-by-level guarantees shortest). Also: finding nodes at distance k, bipartite check, minimum jumps, level-order traversal. Uses O(width) space. DFS: Cycle detection, topological sort, connected components, path existence, backtracking, strongly connected components. Uses O(depth) space. For most shortest path problems with weights → Dijkstra (weighted BFS with priority queue).", "difficulty": "medium", "tags": ["graphs", "bfs", "dfs"] },
+            { "id": "g2", "question": "Explain Dijkstra's algorithm and its limitations.", "answer": "Finds shortest path from source to all vertices in weighted graph. Uses min-heap (priority queue). Greedy: pick unvisited vertex with minimum distance, relax all edges. Time: O((V+E) log V). Limitation: FAILS with NEGATIVE edge weights — once a node is finalized, assumes no shorter path exists, but negative edges can create shorter paths later. Use Bellman-Ford for negative weights (O(V×E)). Use Johnson's algorithm for all-pairs shortest path with negative edges.", "difficulty": "hard", "tags": ["graphs", "shortest-path", "dijkstra"] },
+            { "id": "g3", "question": "What is topological sort?", "answer": "Orders vertices of a DAG (Directed Acyclic Graph) so that for every edge u→v, u appears before v. Only possible if no cycles. Applications: task scheduling with dependencies, build systems (compile order), course prerequisites. Algorithms: DFS-based (finish time ordering — add to stack on DFS exit, reverse), Kahn's (BFS, repeatedly remove 0-indegree vertices). Kahn's also detects cycles: if processed vertices < total vertices → cycle exists. Time: O(V+E).", "difficulty": "medium", "tags": ["graphs", "topological-sort"] },
+            { "id": "g4", "question": "Explain Union-Find (DSU) data structure.", "answer": "Tracks elements partitioned into disjoint sets. Operations: Find (which set contains x?) and Union (merge sets of x and y). Optimizations: Path compression (flatten tree during find — make every node point directly to root) + Union by rank (attach shorter tree to taller). Result: near O(1) amortized per operation — technically O(α(n)) inverse Ackermann, practically constant. Applications: Kruskal's MST, cycle detection in undirected graphs, network connectivity, image segmentation.", "difficulty": "hard", "tags": ["graphs", "union-find"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "os",
+      "title": "Operating Systems",
+      "icon": "💻",
+      "tagline": "How your computer manages resources and runs programs",
+      "importance": "Core CS subject asked heavily at FAANG and product companies.",
+      "color": "from-orange-500 to-red-400",
+      "chapters": [
+        {
+          "id": "processes",
+          "title": "Processes & Threads",
+          "description": "Fundamental units of execution",
+          "topics": ["Process Lifecycle", "Threads vs Processes", "PCB", "Context Switching", "Multithreading"],
+          "questions": [
+            { "id": "p1", "question": "What is the difference between a process and a thread?", "answer": "Process: independent program in execution with own memory space (code, heap, stack, data). Isolated — crash doesn't affect others. Expensive to create (fork). Thread: lightweight unit within a process sharing heap and global variables but with separate stacks. Cheap to create. Threads communicate via shared memory (need synchronization); processes communicate via IPC (pipes, sockets, shared memory). Use threads for parallelism within one app; processes for isolation.", "difficulty": "easy", "tags": ["process", "thread"] },
+            { "id": "p2", "question": "What happens during a context switch?", "answer": "Context switch saves current process state (CPU registers, program counter, stack pointer, memory maps) in its PCB (Process Control Block), then loads next process's PCB. Steps: 1. Timer interrupt triggers OS scheduler. 2. Save current CPU state to PCB. 3. Update scheduling queues. 4. Select next process. 5. Load next process's PCB. 6. Resume execution. Context switches are expensive: cache invalidation, TLB flush, pipeline flush. Kernel tries to minimize via scheduling quantum tuning.", "difficulty": "medium", "tags": ["process", "context-switch"] },
+            { "id": "p3", "question": "What is the difference between concurrency and parallelism?", "answer": "Concurrency: multiple tasks make progress — interleaved on single core (illusion of simultaneous). The OS rapidly switches between tasks. Parallelism: multiple tasks literally execute simultaneously — requires multiple cores/processors. A single-core CPU can be concurrent but not parallel. Multi-core CPU enables both. Example: Node.js is concurrent (event loop) but not parallel for JS code. Go routines achieve true parallelism on multi-core. JavaScript in browser: concurrent (event loop) + Web Workers enable parallelism.", "difficulty": "medium", "tags": ["concurrency", "parallelism"] },
+            { "id": "p4", "question": "Explain race condition with an example.", "answer": "Race condition: output depends on non-deterministic timing of concurrent operations. Example: Two threads both read balance=100, both add 50, both write 150. Result: 150 instead of 200 — one update lost. The 'race' is between read-modify-write operations. Prevention: Mutex (lock before critical section), atomic operations (CPU-level lock-free), semaphores. Detecting: ThreadSanitizer, Helgrind. Race conditions are the most common and hardest-to-reproduce concurrency bug.", "difficulty": "medium", "tags": ["concurrency", "race-condition"] }
+          ]
+        },
+        {
+          "id": "scheduling",
+          "title": "CPU Scheduling",
+          "description": "How OS decides which process gets CPU time",
+          "topics": ["FCFS", "SJF", "Round Robin", "Priority Scheduling", "MLFQ"],
+          "questions": [
+            { "id": "s1", "question": "Compare FCFS, SJF, and Round Robin scheduling.", "answer": "FCFS: Simple queue, no starvation, but convoy effect — one long process blocks all short ones. SJF: Optimal average waiting time but requires knowing burst time (impossible in practice) and causes starvation for long processes. Round Robin: Each process gets time quantum q then preempted — fair, no starvation, good for interactive systems. If q too small → context switch overhead dominates. If q too large → degenerates to FCFS. Real OSes use MLFQ (Multiple Level Feedback Queue) which combines priority + RR.", "difficulty": "medium", "tags": ["scheduling"] },
+            { "id": "s2", "question": "What is starvation and how does aging solve it?", "answer": "Starvation: A low-priority process waits indefinitely because higher-priority processes always preempt it. Common in priority scheduling. Aging solution: Gradually increase waiting process's priority over time. After 5 minutes waiting, low-priority job's priority increases until it becomes high enough to run. Linux CFS (Completely Fair Scheduler) prevents starvation using virtual runtime — each process gets fair CPU share over time, regardless of priority.", "difficulty": "medium", "tags": ["scheduling", "starvation"] }
+          ]
+        },
+        {
+          "id": "memory",
+          "title": "Memory Management",
+          "description": "How OS manages RAM for running processes",
+          "topics": ["Paging", "Segmentation", "Virtual Memory", "Page Replacement", "TLB", "Thrashing"],
+          "questions": [
+            { "id": "m1", "question": "Explain virtual memory and why it's crucial.", "answer": "Virtual memory creates the illusion that each process has its own large address space, using disk as RAM extension. Page table maps virtual → physical addresses. Demand paging: load pages only when accessed (page fault → OS loads from disk). Benefits: Process isolation (process A can't access B's memory), run programs larger than physical RAM, copy-on-write (fork() efficiency — pages shared until written). TLB (Translation Lookaside Buffer) caches recent virtual→physical mappings for fast lookup without page table walk.", "difficulty": "hard", "tags": ["virtual-memory", "paging"] },
+            { "id": "m2", "question": "What are the page replacement algorithms?", "answer": "FIFO: Replace oldest page — simple but Belady's anomaly (more frames → more faults possible). LRU: Replace least recently used — optimal in practice, implemented with doubly linked list + hashmap (O(1) both operations). OPT/Belady's: Replace page not needed longest — theoretical best, requires future knowledge, used as benchmark. Clock Algorithm: Approximates LRU with reference bit and circular buffer — used in real OSes (Linux). LRU-K tracks last K accesses for better predictions.", "difficulty": "hard", "tags": ["memory", "page-replacement"] },
+            { "id": "m3", "question": "What is thrashing and how is it prevented?", "answer": "Thrashing: Process spends more time swapping pages in/out than executing — CPU appears busy but productive work collapses. Cause: Too many concurrent processes, each constantly page-faulting because their working set doesn't fit in available frames. Prevention: Working Set Model — only keep processes running if their working set (actively used pages) fits in memory. Page Fault Frequency monitoring — if too high, give more frames or swap out a process entirely. Linux uses a combination of these strategies.", "difficulty": "hard", "tags": ["memory", "thrashing"] }
+          ]
+        },
+        {
+          "id": "deadlocks",
+          "title": "Deadlocks & Synchronization",
+          "description": "Preventing and handling resource conflicts",
+          "topics": ["Mutex & Semaphores", "Deadlock Conditions", "Banker's Algorithm", "Monitors"],
+          "questions": [
+            { "id": "d1", "question": "What are the four necessary conditions for deadlock?", "answer": "Coffman's conditions — ALL four must hold simultaneously: 1. Mutual Exclusion: resource is non-shareable (only one process at a time). 2. Hold and Wait: process holds resources while waiting for additional ones. 3. No Preemption: resources can't be forcibly taken from a process. 4. Circular Wait: P1 waits for P2's resource, P2 waits for P3's... Pn waits for P1's. Prevention: eliminate any ONE. Most practical: prevent Circular Wait by enforcing total ordering of resource acquisition.", "difficulty": "medium", "tags": ["deadlock"] },
+            { "id": "d2", "question": "What is the difference between a mutex and a semaphore?", "answer": "Mutex: Binary lock with OWNERSHIP — only the thread that acquired it can release it. Ensures mutual exclusion on critical sections. If thread holds mutex and tries to acquire again → deadlock (unless reentrant). Semaphore: Integer counter, can be signaled by ANY thread. Binary semaphore = mutex without ownership. Counting semaphore = allows N concurrent accesses (e.g., connection pool of 10). Use mutex for locking; use semaphore for signaling/coordination. Analogy: Mutex = bathroom key, Semaphore = parking lot counter.", "difficulty": "medium", "tags": ["mutex", "semaphore"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dbms",
+      "title": "Database Management Systems",
+      "icon": "🗄️",
+      "tagline": "Design, query, and optimize relational databases",
+      "importance": "SQL is the most important skill across all tech roles, not just backend.",
+      "color": "from-green-500 to-emerald-400",
+      "chapters": [
+        {
+          "id": "sql-fundamentals",
+          "title": "SQL Fundamentals",
+          "description": "The language every developer must know",
+          "topics": ["SELECT & Filtering", "JOINs", "GROUP BY & HAVING", "Subqueries", "Window Functions", "Indexes"],
+          "questions": [
+            { "id": "sql1", "question": "What is the difference between WHERE and HAVING?", "answer": "WHERE filters rows BEFORE grouping — operates on individual rows, cannot use aggregate functions (COUNT, SUM, AVG). HAVING filters AFTER grouping — operates on groups, CAN use aggregates. Example: 'SELECT dept, COUNT(*) FROM emp WHERE salary > 50000 GROUP BY dept HAVING COUNT(*) > 5' — WHERE removes low-salary employees first, HAVING then keeps only departments with >5 remaining. WHERE executes earlier → generally faster.", "difficulty": "easy", "tags": ["sql", "where", "having"] },
+            { "id": "sql2", "question": "Explain the different types of JOINs.", "answer": "INNER JOIN: Only rows with matches in BOTH tables. LEFT JOIN: All rows from left + matching from right (NULL if no match) — preserves left table. RIGHT JOIN: Opposite of LEFT. FULL OUTER JOIN: All rows from both, NULLs where no match. CROSS JOIN: Cartesian product — every row combined with every other row (n×m). SELF JOIN: Table joined with itself (employee → manager hierarchy). LEFT JOIN is most commonly used when right side is optional.", "difficulty": "medium", "tags": ["sql", "joins"] },
+            { "id": "sql3", "question": "What are window functions and when do you use them?", "answer": "Window functions compute over a set of rows related to current row WITHOUT collapsing them (unlike GROUP BY). Syntax: FUNCTION() OVER (PARTITION BY col ORDER BY col). ROW_NUMBER(): unique sequential rank. RANK(): ties get same rank with gaps. DENSE_RANK(): ties, no gaps. LAG()/LEAD(): access previous/next row's value. SUM OVER: running total. Use when you need row-level data AND aggregate info simultaneously — e.g., each employee's salary AND their department average.", "difficulty": "hard", "tags": ["sql", "window-functions"] },
+            { "id": "sql4", "question": "How do database indexes work and what are the tradeoffs?", "answer": "Index: B-tree (default) or Hash structure mapping column values to row locations. SELECT with indexed column: O(log n) vs O(n) full scan. Tradeoffs: INSERT/UPDATE/DELETE slower (index must be updated), extra storage. CREATE INDEX on: WHERE clause columns, JOIN columns, ORDER BY columns, high-cardinality columns. AVOID on: small tables, rarely-queried columns, low-cardinality (boolean/status) columns. Composite index: leftmost prefix rule — index on (a,b,c) helps queries on a, (a,b), (a,b,c) but not on b alone.", "difficulty": "hard", "tags": ["database", "indexes"] }
+          ]
+        },
+        {
+          "id": "normalization",
+          "title": "Database Design & Normalization",
+          "description": "Design efficient, consistent schemas",
+          "topics": ["1NF, 2NF, 3NF, BCNF", "Functional Dependencies", "ER Diagrams", "Denormalization"],
+          "questions": [
+            { "id": "n1", "question": "Explain 1NF, 2NF, and 3NF with examples.", "answer": "1NF: Atomic values, no repeating groups. Bad: phones='111,222' in one cell. Fix: separate rows. 2NF: Must be 1NF + no partial dependency (every non-key attribute depends on FULL composite key). Bad: Order(OrderID, ProductID, ProductName) — ProductName depends only on ProductID (partial). Fix: separate Product table. 3NF: Must be 2NF + no transitive dependency (non-key shouldn't determine another non-key). Bad: Employee(ID, DeptID, DeptName) — DeptName depends on DeptID, not ID. Fix: separate Department table.", "difficulty": "hard", "tags": ["normalization"] },
+            { "id": "n2", "question": "When would you intentionally denormalize?", "answer": "Denormalization adds redundancy to improve read performance at cost of write complexity. Use when: 1. Read-heavy analytics workloads where joins are too expensive. 2. Duplicated data changes rarely. 3. Eliminating joins at massive scale. Examples: Storing username in posts table (avoid join on every post fetch), pre-computing aggregate counts (likes_count column updated on each like). OLAP/data warehouses are deliberately denormalized (star schema). OLTP systems stay normalized. Always profile before denormalizing.", "difficulty": "medium", "tags": ["normalization", "performance"] }
+          ]
+        },
+        {
+          "id": "transactions",
+          "title": "Transactions & ACID",
+          "description": "Ensuring data integrity in concurrent systems",
+          "topics": ["ACID Properties", "Isolation Levels", "Optimistic vs Pessimistic Locking", "MVCC"],
+          "questions": [
+            { "id": "t1", "question": "Explain ACID properties with real examples.", "answer": "Atomicity: Bank transfer — debit and credit both succeed or both fail. No partial state. Consistency: Account balance can't go negative — all DB constraints maintained before and after transaction. Isolation: Two users booking the last flight seat simultaneously — each sees consistent state, exactly one succeeds. No double-booking. Durability: After 'payment confirmed' message, data survives server crashes — written to WAL (Write-Ahead Log) before confirming. BASE (NoSQL) trades ACID for scalability: Eventually Consistent instead.", "difficulty": "medium", "tags": ["acid", "transactions"] },
+            { "id": "t2", "question": "What are transaction isolation levels?", "answer": "Read Uncommitted: Can read dirty (uncommitted) data — fastest, unsafe. Read Committed (PostgreSQL default): Only read committed data — no dirty reads, but non-repeatable reads possible (re-read same row, different value). Repeatable Read (MySQL InnoDB default): Same row read twice gives same value — no dirty/non-repeatable reads but phantom reads possible (new rows appear). Serializable: Full isolation, transactions behave as if serial — most consistent, lowest concurrency. Higher isolation = more locking = less throughput.", "difficulty": "hard", "tags": ["isolation", "transactions"] },
+            { "id": "t3", "question": "What is the difference between optimistic and pessimistic locking?", "answer": "Pessimistic Locking: Lock resource BEFORE accessing it — assume conflicts WILL happen. 'SELECT FOR UPDATE' in SQL. Safe but reduces concurrency, can cause deadlocks. Good for high-contention (many writes to same rows). Optimistic Locking: Read without locking, track version number/timestamp. On update: check if version changed — if yes, retry. Assumes conflicts are RARE. Better concurrency but needs retry logic. Good for read-heavy, low-contention systems. Git uses optimistic (merge conflicts handled manually).", "difficulty": "hard", "tags": ["locking", "transactions"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "computer-networks",
+      "title": "Computer Networks",
+      "icon": "🌐",
+      "tagline": "How computers communicate across the internet",
+      "importance": "Essential for backend, DevOps, and system design interviews.",
+      "color": "from-cyan-500 to-blue-400",
+      "chapters": [
+        {
+          "id": "osi-model",
+          "title": "OSI & TCP/IP Models",
+          "description": "Layered architecture of network communication",
+          "topics": ["7 OSI Layers", "TCP/IP Stack", "Protocol at Each Layer", "Encapsulation"],
+          "questions": [
+            { "id": "osi1", "question": "What are the 7 OSI layers?", "answer": "7. Application (HTTP, DNS, SMTP, FTP) — user-facing protocols. 6. Presentation (TLS, JPEG, encoding) — data format, encryption. 5. Session (NetBIOS) — session establishment/termination. 4. Transport (TCP, UDP) — end-to-end reliability, ports, segmentation. 3. Network (IP, ICMP, OSPF) — logical addressing, routing. 2. Data Link (Ethernet, MAC, ARP, Wi-Fi) — node-to-node on same network, frames. 1. Physical (cables, fiber, signals) — raw bit transmission. Mnemonic: 'All People Seem To Need Data Processing'.", "difficulty": "easy", "tags": ["osi"] },
+            { "id": "osi2", "question": "What is the difference between TCP/IP and OSI model?", "answer": "OSI: 7-layer theoretical reference model for understanding/standardizing protocols. TCP/IP: 4-layer practical model actually used: Application (OSI 5,6,7), Transport (OSI 4), Internet (OSI 3), Network Access (OSI 1,2). OSI prescribes strict layer separation; TCP/IP is more flexible. TCP/IP came from ARPANET; OSI was designed by committee. Developers use TCP/IP in practice but OSI terminology for troubleshooting. Key: OSI is a framework, TCP/IP is the actual implementation.", "difficulty": "medium", "tags": ["osi", "tcp-ip"] }
+          ]
+        },
+        {
+          "id": "tcp-udp",
+          "title": "TCP vs UDP & HTTP",
+          "description": "Core transport and application protocols",
+          "topics": ["TCP 3-way Handshake", "Flow & Congestion Control", "UDP Use Cases", "HTTP/2 vs HTTP/3", "WebSockets"],
+          "questions": [
+            { "id": "tu1", "question": "Explain the TCP 3-way handshake.", "answer": "Establishes reliable connection before data transfer. 1. SYN: Client sends SYN with its Initial Sequence Number (ISN). 2. SYN-ACK: Server acknowledges client's SYN, sends its own ISN. 3. ACK: Client acknowledges server's SYN. Connection established — takes 1.5 RTTs. Connection teardown: 4-way — FIN → ACK → FIN → ACK (server may have more data to send after receiving FIN, hence separate FIN). TIME_WAIT state: waits 2×MSL to ensure final ACK received.", "difficulty": "medium", "tags": ["tcp", "handshake"] },
+            { "id": "tu2", "question": "When would you choose UDP over TCP?", "answer": "UDP trades reliability for speed. Choose UDP when: 1. Real-time matters more than accuracy — live video/audio (dropped frame > buffering delay), online gaming (stale position data worthless). 2. Low latency critical — VoIP, online multiplayer. 3. Simple request-response — DNS lookups (retry is cheap), DHCP. 4. Broadcast/Multicast — one-to-many. TCP overhead (handshake, ACKs, retransmission, ordering) too costly for these cases. HTTP/3 (QUIC) implements reliability on top of UDP, combining speed + reliability.", "difficulty": "easy", "tags": ["udp", "tcp"] },
+            { "id": "tu3", "question": "What improvements does HTTP/2 bring over HTTP/1.1?", "answer": "HTTP/1.1 problems: Head-of-line blocking (one slow request blocks others per connection), no header compression, requires 6-8 parallel connections for performance, no server push. HTTP/2 solutions: Multiplexing (multiple streams on ONE TCP connection — no HOL blocking), HPACK header compression (~30% reduction), Server Push (send resources before client asks), binary framing (faster to parse vs text). HTTP/3 uses QUIC (UDP-based) — eliminates TCP-level HOL blocking too, faster connection setup (0-RTT). Result: 50-80% faster loads.", "difficulty": "hard", "tags": ["http", "http2"] }
+          ]
+        },
+        {
+          "id": "security",
+          "title": "Network Security",
+          "description": "Protecting data in transit and preventing attacks",
+          "topics": ["TLS/SSL", "HTTPS", "Authentication vs Authorization", "Common Attacks", "Firewalls"],
+          "questions": [
+            { "id": "sec1", "question": "How does HTTPS/TLS work?", "answer": "TLS provides encryption (confidentiality), authentication, and integrity. TLS Handshake: 1. Client Hello — supported cipher suites, TLS version, random. 2. Server Hello — chosen cipher, sends certificate (contains public key). 3. Client verifies certificate against trusted CAs (Certificate Authorities). 4. Key Exchange — ECDHE generates shared secret without transmitting it. 5. Session keys derived, both sides send Finished message. Data encrypted with symmetric AES. Asymmetric crypto for key exchange; symmetric for speed. Certificate = server's public key + identity signed by CA.", "difficulty": "hard", "tags": ["https", "tls"] },
+            { "id": "sec2", "question": "What is the difference between authentication and authorization?", "answer": "Authentication (AuthN): Verifying IDENTITY — 'Are you really Alice?' Methods: passwords, biometrics, OTP, hardware security keys, certificates. Authorization (AuthZ): Verifying PERMISSIONS — 'Can Alice delete posts?' Happens AFTER authentication. Example: JWT — token signature proves identity (authN), token claims/scopes determine access rights (authZ). OAuth 2.0 = authorization framework (grants access without sharing credentials). OpenID Connect = authentication layer on top of OAuth. Common mistake: checking if user is logged in (authN) but not checking if they have permission (authZ) → broken access control.", "difficulty": "medium", "tags": ["security", "authentication"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oop",
+      "title": "Object Oriented Programming",
+      "icon": "🔷",
+      "tagline": "Design scalable software with proven OOP patterns",
+      "importance": "Asked in every interview. Foundation of all software design.",
+      "color": "from-violet-500 to-purple-400",
+      "chapters": [
+        {
+          "id": "four-pillars",
+          "title": "Four Pillars of OOP",
+          "description": "The core concepts every developer must master",
+          "topics": ["Encapsulation", "Abstraction", "Inheritance", "Polymorphism"],
+          "questions": [
+            { "id": "oop1", "question": "Explain the four pillars of OOP with examples.", "answer": "Encapsulation: Bundle data + methods, hide internal state (private fields, public getters/setters). BankAccount hides balance manipulation, exposes deposit/withdraw. Abstraction: Show only what's necessary, hide complexity. abstract class Shape with abstract area() — caller doesn't know implementation. Inheritance: Child inherits parent's properties. Dog extends Animal, gets name field but overrides speak(). Polymorphism: Same interface, different behavior. Shape reference → Circle or Rectangle, area() gives correct result at runtime (dynamic dispatch).", "difficulty": "easy", "tags": ["oop", "pillars"] },
+            { "id": "oop2", "question": "What is the difference between abstract classes and interfaces?", "answer": "Abstract class: Can have concrete methods, instance variables, constructors. A class can extend ONLY ONE abstract class (single inheritance). Share code among related classes. Interface: Defines contract — all methods abstract (Java < 8), no instance variables, a class can implement MULTIPLE interfaces. Java 8+ default/static interface methods blur distinction. Use abstract class when: sharing code between related classes. Use interface when: defining a contract for unrelated classes, or needing multiple inheritance of type. Example: List is an interface; AbstractList is an abstract class implementing it.", "difficulty": "medium", "tags": ["oop", "abstract"] },
+            { "id": "oop3", "question": "Explain method overloading vs method overriding.", "answer": "Overloading (Compile-time/Static polymorphism): Same method name, different parameter types/count. Resolved at compile time by compiler. Example: print(int x) and print(String s) — same name, different params. Can overload in same class. Overriding (Runtime/Dynamic polymorphism): Subclass provides different implementation of parent's method with SAME signature. Resolved at runtime via virtual dispatch. @Override annotation. Rules: can't override static (class-level), final (prevents overriding), or private methods. Covariant return type allowed.", "difficulty": "medium", "tags": ["oop", "overloading", "overriding"] }
+          ]
+        },
+        {
+          "id": "solid-principles",
+          "title": "SOLID Principles & Design Patterns",
+          "description": "Guidelines for maintainable, extensible software",
+          "topics": ["Single Responsibility", "Open/Closed", "Liskov Substitution", "Interface Segregation", "Dependency Inversion", "Design Patterns"],
+          "questions": [
+            { "id": "s1", "question": "Explain all five SOLID principles.", "answer": "S — Single Responsibility: One class, one reason to change. UserService shouldn't also send emails. O — Open/Closed: Open for extension, closed for modification. Add PayPal without changing existing PaymentProcessor. L — Liskov Substitution: Subtype must be usable wherever base type is used. Square extending Rectangle violates this (setWidth affects height). I — Interface Segregation: Don't force classes to implement unused methods. Split fat IWorker into IWorkable and IFeedable. D — Dependency Inversion: Depend on abstractions (IRepository), not concretions (MySQLRepository). Enables easy testing and swapping implementations.", "difficulty": "hard", "tags": ["solid"] },
+            { "id": "s2", "question": "What are design patterns? Name the three categories with examples.", "answer": "Reusable solutions to common software design problems. Three categories: 1. Creational (object creation) — Singleton (one DB connection instance), Factory Method (create objects without specifying exact class), Builder (complex object step-by-step like AlertDialog.Builder), Prototype (clone existing object). 2. Structural (composition) — Adapter (convert interface to another), Decorator (add behavior dynamically like InputStream wrappers), Facade (simplified interface to complex subsystem). 3. Behavioral (communication) — Observer (event listeners/React state), Strategy (interchangeable algorithms like sorting), Command (encapsulate action as object).", "difficulty": "hard", "tags": ["design-patterns"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "system-design",
+      "title": "System Design",
+      "icon": "🏗️",
+      "tagline": "Design scalable systems for millions of users",
+      "importance": "Mandatory for senior roles. Determines your salary band at FAANG.",
+      "color": "from-slate-600 to-slate-400",
+      "chapters": [
+        {
+          "id": "fundamentals",
+          "title": "System Design Fundamentals",
+          "description": "Core concepts for scalable distributed systems",
+          "topics": ["Horizontal vs Vertical Scaling", "CAP Theorem", "Load Balancing", "Caching Strategies", "CDN", "Database Sharding"],
+          "questions": [
+            { "id": "sd1", "question": "Explain the CAP theorem.", "answer": "CAP: Distributed system can only guarantee 2 of 3: Consistency (all nodes see same data simultaneously), Availability (every request gets a response, no errors), Partition Tolerance (system works despite network failures). Network partitions are unavoidable in distributed systems, so real choice is CP vs AP. CP (banks, payment systems): can't show stale balance. AP (social media, shopping carts): stale data acceptable. HBase, Zookeeper = CP. Cassandra, DynamoDB = AP. PACELC extends CAP: even without partition, tradeoff between Latency and Consistency.", "difficulty": "hard", "tags": ["cap-theorem", "distributed-systems"] },
+            { "id": "sd2", "question": "What is the difference between horizontal and vertical scaling?", "answer": "Vertical (Scale Up): Add more resources to ONE machine — more RAM, faster CPU. Simple, no code changes. Limited by hardware max. Single point of failure. Horizontal (Scale Out): Add MORE machines, distribute load via load balancer. Requires stateless services, distributed data storage. More complex but theoretically unlimited. Better fault tolerance. In practice: databases often scale vertically first, then add read replicas (horizontal for reads). App servers scale horizontally with auto-scaling groups. Databases shard for write scaling.", "difficulty": "medium", "tags": ["scaling"] },
+            { "id": "sd3", "question": "Explain different caching strategies.", "answer": "Cache-aside (Lazy): App checks cache, miss → fetch DB → populate cache. Simple, only caches what's needed. Risk: thundering herd on cold cache. Write-through: Write to cache AND DB simultaneously. Always consistent, write latency doubled. Write-behind (Write-back): Write to cache, async write to DB later. Fast writes, risk of data loss on crash. Read-through: Cache sits in front of DB, manages its own population. CDN: Geographic edge cache for static assets. Eviction policies: LRU (default), LFU, TTL-based. Use Redis for distributed caching across services.", "difficulty": "hard", "tags": ["caching"] }
+          ]
+        },
+        {
+          "id": "design-problems",
+          "title": "Classic Design Problems",
+          "description": "Most commonly asked system design interview questions",
+          "topics": ["URL Shortener", "Twitter Feed", "WhatsApp", "Netflix", "Uber", "Rate Limiter", "Notification System"],
+          "questions": [
+            { "id": "dp1", "question": "How would you design a URL shortener like bit.ly?", "answer": "Scale: 100M URLs, 10B redirects/month. 1. ID Generation: Base62 encoding (a-z,A-Z,0-9), 7 chars = 62^7 = 3.5T unique URLs. Use distributed ID (Snowflake) or hash+collision handling. 2. DB: {id, short_code, long_url, user_id, created_at, expires_at, click_count}. Index on short_code. 3. Redirect: 301 (permanent, browser cached, fewer hits) vs 302 (temporary, counts every click). 4. Caching: Redis cache hot URLs (90% traffic = 10% URLs). 5. Scale: CDN for redirect servers globally, read replicas for DB. 6. Analytics: Async write to Kafka → ClickHouse for aggregation.", "difficulty": "hard", "tags": ["system-design", "url-shortener"] },
+            { "id": "dp2", "question": "How do you design a rate limiter?", "answer": "Prevents API abuse/DDoS. Algorithms: Token Bucket — bucket refills at r tokens/sec, request consumes 1 token, allows bursting up to bucket size. Leaky Bucket — queue requests, process at constant rate, smooth output. Fixed Window — count requests per time window, simple but allows 2x rate at window boundaries. Sliding Window Log — exact, memory intensive. Sliding Window Counter — approximate, efficient. Implementation: Redis + Lua script for atomic operations. Key = 'rate:{userId}:{endpoint}', value = request count, TTL = window size. Distributed: Redis cluster or consistent hashing of user IDs to rate limiter instances.", "difficulty": "hard", "tags": ["system-design", "rate-limiter"] },
+            { "id": "dp3", "question": "How would you design a notification system?", "answer": "Requirements: send push, SMS, email notifications at scale. Components: 1. Notification Service API — receives notification requests. 2. Message Queue (Kafka) — decouple producers from consumers, handle spikes. 3. Workers per channel — Push Worker (APNs/FCM), SMS Worker (Twilio), Email Worker (SendGrid). 4. User preferences DB — which channels user has enabled. 5. Template Service — notification content templates. 6. Rate limiting — don't spam users. 7. Retry logic with exponential backoff. 8. Dead letter queue — failed notifications for investigation. Scale: 1M notifications/sec requires hundreds of worker instances.", "difficulty": "hard", "tags": ["system-design", "notification"] }
+          ]
+        }
+      ]
+    }
+  ]
+}
