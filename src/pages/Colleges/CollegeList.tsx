@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import {
-  Search, MapPin, Star, ArrowRight, Filter,
+  Search, MapPin,  ArrowRight, Filter,
   GraduationCap, TrendingUp, Building2, Users
 } from "lucide-react";
 import collegesData from "../../data/colleges.json";

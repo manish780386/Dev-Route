@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import {
   ArrowRight, BookOpen, Map, Brain, Calculator,
-  Zap, Award, TrendingUp, ChevronRight, GraduationCap, Trophy
+  Award,  ChevronRight, GraduationCap, Trophy
 } from "lucide-react";
 import coursesData  from "../../data/courses.json";
 import roadmapsData from "../../data/roadmaps.json";

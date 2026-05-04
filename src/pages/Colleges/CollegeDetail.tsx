@@ -1,7 +1,7 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 import {
-  ArrowLeft, MapPin, Star, ExternalLink, Phone, Mail,
+  ArrowLeft, MapPin,Phone, Mail,
   GraduationCap, TrendingUp, CheckCircle2, Award, Calendar,
   Users, Building2, ChevronDown, ChevronUp, Globe
 } from "lucide-react";
