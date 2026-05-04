@@ -23,16 +23,6 @@ const PRACTICE_ITEMS = [
   { to: "/placement",            icon: Briefcase,     label: "Placement",      desc: "Resume & interview prep"  },
 ];
 
-const navLinks = [
-  { to: "/courses",     label: "Courses"     },
-  { to: "/roadmaps",    label: "Roadmaps"    },
-  { to: "/cs-subjects", label: "CS Subjects" },
-  { to: "/aptitude",    label: "Aptitude"    },
-  { to: "/skills",      label: "Skills"      },
-  { to: "/quiz",        label: "Quiz 🎯"     },
-  { to: "/placement",   label: "Placement"   },
-];
-
 // ── Dropdown wrapper ──────────────────────────────────────────────────────────
 
 function NavDropdown({
