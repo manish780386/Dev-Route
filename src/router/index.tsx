@@ -14,7 +14,9 @@ import AptitudeTopic   from "../pages/Aptitude/AptitudeTopic";
 import SkillsPage      from "../pages/Skills/SkillsPage";
 import PlacementPage   from "../pages/Placement/PlacementPage";
 import SearchPage      from "../pages/Search/SearchPage";
-import QuizPage        from "../pages/Quiz/QuizPage.tsx";
+import QuizPage        from "../pages/Quiz/QuizPage";
+import CollegeList     from "../pages/Colleges/CollegeList.tsx";
+import CollegeDetail   from "../pages/Colleges/CollegeDetail.tsx";
 import NotFound        from "../pages/NotFound";
 
 export const router = createBrowserRouter([
@@ -35,10 +37,12 @@ export const router = createBrowserRouter([
       { path: "placement",                  element: <PlacementPage />   },
       { path: "search",                     element: <SearchPage />      },
       { path: "quiz",                       element: <QuizPage />        },
+      { path: "colleges",                   element: <CollegeList />     },
+      { path: "colleges/:collegeId",        element: <CollegeDetail />   },
       { path: "*",                          element: <NotFound />        },
     ],
   },
-  // RoadmapGraph is OUTSIDE App layout — it's full screen
+  // Full-screen pages — outside App layout (no Navbar/Footer)
   {
     path: "/roadmaps/:roadmapId/graph",
     element: <RoadmapGraph />,

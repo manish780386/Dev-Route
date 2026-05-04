@@ -140,6 +140,9 @@ export interface Skill {
   color: string;
 }
 
+// ─── College ──────────────────────────────────────────────────────────────────
+export type { Institute, CollegeCourse, CollegeRanking } from "./college.types";
+
 // ─── Search ───────────────────────────────────────────────────────────────────
 export type SearchResultType = "course" | "roadmap" | "subject" | "skill";
 

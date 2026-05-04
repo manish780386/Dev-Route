@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import {
   ArrowRight, BookOpen, Map, Brain, Calculator,
-  Zap, Award,  ChevronRight
+  Zap, Award, TrendingUp, ChevronRight, GraduationCap, Trophy
 } from "lucide-react";
-import coursesData from "../../data/courses.json";
+import coursesData  from "../../data/courses.json";
 import roadmapsData from "../../data/roadmaps.json";
+import collegesData from "../../data/colleges.json";
+import type { Institute } from "../../types";
 
 const features = [
   {
@@ -35,13 +37,27 @@ const features = [
     color: "bg-orange-50 text-orange-600",
     to: "/aptitude",
   },
+  {
+    icon: GraduationCap,
+    title: "Find Colleges 🆕",
+    description: "Engineering colleges, bootcamps, coaching institutes near you.",
+    color: "bg-teal-50 text-teal-600",
+    to: "/colleges",
+  },
+  {
+    icon: Trophy,
+    title: "Mock Quiz 🆕",
+    description: "Timed placement tests — just like real company aptitude rounds.",
+    color: "bg-rose-50 text-rose-600",
+    to: "/quiz",
+  },
 ];
 
 const stats = [
-  { value: "9+",   label: "Courses",         icon: BookOpen  },
-  { value: "4+",   label: "Roadmaps",         icon: Map       },
-  { value: "6",    label: "CS Subjects",      icon: Brain     },
-  { value: "100+", label: "Practice Q&A",    icon: Zap       },
+  { value: "9+",   label: "Courses",          icon: BookOpen      },
+  { value: "4+",   label: "Roadmaps",          icon: Map           },
+  { value: "60+",  label: "CS Q&A",           icon: Brain         },
+  { value: "13+",  label: "Institutes Listed", icon: GraduationCap },
 ];
 
 const quickLinks = [
@@ -245,6 +261,70 @@ export default function Home() {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* ── Colleges Preview ─────────────────────────────────────────────── */}
+      <section className="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/30 dark:to-teal-950/30 border-y border-emerald-100 dark:border-emerald-900">
+        <div className="container-app py-20">
+          <div className="flex items-center justify-between mb-10">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-emerald-100 dark:bg-emerald-900 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-400 rounded-full px-3 py-1 text-xs font-semibold mb-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                🆕 New — Find Institutes
+              </div>
+              <h2 className="section-title mb-2">Find the right college</h2>
+              <p className="text-gray-500 dark:text-gray-400 max-w-md">
+                Engineering colleges, coding bootcamps, coaching institutes — filter by your state and city.
+              </p>
+            </div>
+            <Link to="/colleges" className="hidden sm:flex items-center gap-2 btn-ghost border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+              Browse all <ArrowRight size={15} />
+            </Link>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            {(collegesData.institutes as Institute[]).slice(0, 4).map((inst) => (
+              <Link
+                key={inst.id}
+                to={`/colleges/${inst.id}`}
+                className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 p-5 flex flex-col group hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${inst.color} flex items-center justify-center text-xl shadow-sm`}>
+                    {inst.icon}
+                  </div>
+                  {inst.ranking.nirf && (
+                    <span className="text-xs text-amber-600 font-semibold bg-amber-50 dark:bg-amber-950 px-2 py-0.5 rounded-full border border-amber-200 dark:border-amber-800">
+                      NIRF #{inst.ranking.nirf}
+                    </span>
+                  )}
+                </div>
+                <h3 className="font-display font-bold text-gray-900 dark:text-white text-sm mb-0.5 group-hover:text-emerald-600 transition-colors leading-snug">
+                  {inst.name}
+                </h3>
+                <p className="text-xs text-gray-400 flex items-center gap-1 mb-3">
+                  📍 {inst.city}, {inst.state}
+                </p>
+                <div className="mt-auto flex items-center justify-between text-xs">
+                  <span className="text-emerald-600 font-semibold">{inst.avgPackage}</span>
+                  <span className="text-gray-400">⭐ {inst.rating}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap gap-2 justify-center">
+            {collegesData.types.filter((t) => t.id !== "all").map((t) => (
+              <Link
+                key={t.id}
+                to="/colleges"
+                className="flex items-center gap-1.5 text-sm text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 hover:border-emerald-300 hover:text-emerald-600 rounded-full px-4 py-2 transition-colors shadow-sm"
+              >
+                {t.icon} {t.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
