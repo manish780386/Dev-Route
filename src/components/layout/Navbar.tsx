@@ -153,20 +153,31 @@ export default function Navbar() {
             ))}
           </NavDropdown>
 
-          {/* Find Colleges — highlighted link */}
-          <NavLink
-            to="/colleges"
-            className={({ isActive }) =>
-              `flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
-                isActive
-                  ? "bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400"
-                  : "text-emerald-600 dark:text-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-950"
-              }`
-            }
-          >
-            <GraduationCap size={15} />
-            Find Colleges
-          </NavLink>
+          {/* Find Colleges — with dropdown */}
+          <NavDropdown label={<span className="flex items-center gap-1.5"><GraduationCap size={14} /> Colleges</span>}>
+            <div className="px-3 py-1.5">
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Find Institutes</p>
+            </div>
+            <DropdownItem
+              to="/mp-colleges"
+              icon={MapPin}
+              label="MP Colleges 🆕"
+              desc="Advanced — Bhopal, Indore, Gwalior"
+            />
+            <DropdownItem
+              to="/mp-colleges/map"
+              icon={MapPin}
+              label="MP College Map"
+              desc="Interactive map view"
+            />
+            <div className="h-px bg-gray-100 dark:bg-gray-800 mx-3 my-1" />
+            <DropdownItem
+              to="/colleges"
+              icon={GraduationCap}
+              label="All India Colleges"
+              desc="IITs, BITS, VIT & more"
+            />
+          </NavDropdown>
 
           {/* Direct links */}
           {[
@@ -205,12 +216,12 @@ export default function Navbar() {
             {dark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
 
-          {/* Colleges CTA — desktop */}
+          {/* MP Colleges CTA — desktop */}
           <Link
-            to="/colleges"
+            to="/mp-colleges"
             className="hidden lg:flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 text-white text-sm font-semibold hover:bg-emerald-700 transition-colors shadow-sm"
           >
-            <MapPin size={13} /> Find Near Me
+            <MapPin size={13} /> MP Colleges
           </Link>
 
           {/* Mobile menu toggle */}
@@ -236,13 +247,27 @@ export default function Navbar() {
             <div className="h-px bg-gray-100 dark:bg-gray-800 my-1" />
 
             {/* Find Colleges — highlighted */}
-            <Link
-              to="/colleges"
-              className="flex items-center gap-3 px-4 py-3 rounded-xl bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 font-semibold text-sm"
-            >
-              <GraduationCap size={16} /> Find Colleges & Institutes
-              <span className="ml-auto text-xs bg-emerald-600 text-white px-2 py-0.5 rounded-full">NEW</span>
-            </Link>
+            <div className="flex flex-col gap-1">
+              <Link
+                to="/mp-colleges"
+                className="flex items-center gap-3 px-4 py-3 rounded-xl bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 font-semibold text-sm"
+              >
+                <GraduationCap size={16} /> MP Colleges (Advanced)
+                <span className="ml-auto text-xs bg-emerald-600 text-white px-2 py-0.5 rounded-full">MP</span>
+              </Link>
+              <Link
+                to="/mp-colleges/map"
+                className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+              >
+                <MapPin size={15} className="text-gray-400" /> MP College Map
+              </Link>
+              <Link
+                to="/colleges"
+                className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+              >
+                <GraduationCap size={15} className="text-gray-400" /> All India Colleges
+              </Link>
+            </div>
 
             <div className="h-px bg-gray-100 dark:bg-gray-800 my-1" />
 
