@@ -21,10 +21,10 @@ const footerLinks = {
     { to: "/roadmaps/devops-roadmap",        label: "DevOps"         },
   ],
   Institutes: [
-    { to: "/colleges",                        label: "Find Colleges"          },
-    { to: "/colleges?type=engineering-college", label: "Engineering Colleges" },
-    { to: "/colleges?type=coding-bootcamp",   label: "Coding Bootcamps"       },
-    { to: "/colleges?type=coaching-institute",label: "Coaching Institutes"    },
+    { to: "/mp-colleges",                          label: "MP Colleges (Advanced)" },
+    { to: "/mp-colleges/map",                      label: "MP College Map"         },
+    { to: "/colleges",                             label: "All India Colleges"     },
+    { to: "/colleges?type=coding-bootcamp",        label: "Coding Bootcamps"       },
   ],
 };
 
