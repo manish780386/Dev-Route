@@ -1,8 +1,7 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import {
-  MapPin, GraduationCap, TrendingUp, Building2,
-  Users, GitCompare, Map, List, LayoutGrid
+  MapPin, GitCompare, Map, List, LayoutGrid
 } from "lucide-react";
 import mpData from "../../data/mp-colleges.json";
 import CollegeFilters, {

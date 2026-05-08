@@ -5,6 +5,7 @@ import {
 } from "lucide-react";
 import mpData from "../../data/mp-colleges.json";
 
+
 // Export type for reuse
 export interface MPInstitute {
   id:                string;
