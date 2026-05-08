@@ -1,9 +1,9 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 import {
-  ArrowLeft, MapPin, Globe, Phone, Mail, Home,
+  ArrowLeft, MapPin, Globe, Phone, Mail,
   TrendingUp, CheckCircle2, Award, GraduationCap,
-  ChevronDown, ChevronUp, GitCompare, Map as MapIcon,
+  ChevronDown, ChevronUp,  Map as MapIcon,
   BookOpen, Star, Layers
 } from "lucide-react";
 import mpData            from "../../data/mp-colleges.json";

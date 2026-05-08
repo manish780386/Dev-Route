@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import {
-  MapPin, Star, ArrowRight, GitCompare,
-  CheckCircle2, Home, TrendingUp, Users
+  MapPin, ArrowRight, GitCompare,
+   Home, TrendingUp
 } from "lucide-react";
 import mpData from "../../data/mp-colleges.json";
 

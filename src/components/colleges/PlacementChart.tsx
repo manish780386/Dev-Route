@@ -37,7 +37,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   );
 };
 
-export default function PlacementChart({ stats, collegeName }: PlacementChartProps) {
+export default function PlacementChart({ stats }: PlacementChartProps) {
   if (!stats || stats.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-12 text-gray-400">

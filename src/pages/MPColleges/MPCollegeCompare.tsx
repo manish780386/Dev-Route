@@ -1,7 +1,6 @@
 import { useSearchParams, Link, Navigate } from "react-router-dom";
 import {
-  ArrowLeft, CheckCircle2, XCircle, Minus,
-  TrendingUp, Home, Star, GraduationCap
+  ArrowLeft, CheckCircle2, XCircle, Minus
 } from "lucide-react";
 import mpData from "../../data/mp-colleges.json";
 import type { MPInstitute } from "../../components/colleges/MPCollegeCard";
