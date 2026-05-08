@@ -6,7 +6,7 @@ import CourseList        from "../pages/Courses/CourseList";
 import CourseDetail      from "../pages/Courses/CourseDetail";
 import RoadmapList       from "../pages/Roadmaps/RoadmapList";
 import RoadmapDetail     from "../pages/Roadmaps/RoadmapDetail";
-import RoadmapGraph      from "../pages/Roadmaps/RoadmapGraph";
+
 import CSSubjectList     from "../pages/CSSubjects/CSSubjectList";
 import CSSubjectDetail   from "../pages/CSSubjects/CSSubjectDetail";
 import AptitudeHub       from "../pages/Aptitude/AptitudeHub";

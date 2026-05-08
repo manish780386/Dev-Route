@@ -1,8 +1,8 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowLeft, MapPin, Filter, List,
-  TrendingUp, Home, Star, X
+  ArrowLeft, MapPin, List,
+   X
 } from "lucide-react";
 import mpData from "../../data/mp-colleges.json";
 import type { MPInstitute } from "../../components/colleges/MPCollegeCard";
