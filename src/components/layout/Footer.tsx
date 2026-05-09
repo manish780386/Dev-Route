@@ -38,19 +38,27 @@ export default function Footer() {
             <GraduationCap size={24} className="text-emerald-600 shrink-0" />
             <div>
               <p className="font-display font-bold text-gray-900 dark:text-white text-sm">
-                Looking for the right college or bootcamp?
+                🆕 Advanced MP College Finder
               </p>
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-                Discover 13+ engineering colleges, coding bootcamps & coaching institutes across India
+                Compare NIT, IIT, LNCT, SGSITS, bootcamps & coaching in Madhya Pradesh — with map view, placement graphs & side-by-side comparison
               </p>
             </div>
           </div>
-          <Link
-            to="/colleges"
-            className="shrink-0 flex items-center gap-2 bg-emerald-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-emerald-700 transition-colors shadow-sm"
-          >
-            <MapPin size={14} /> Find Institutes
-          </Link>
+          <div className="flex gap-2 shrink-0">
+            <Link
+              to="/mp-colleges/map"
+              className="flex items-center gap-2 bg-white dark:bg-gray-800 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-400 text-sm font-semibold px-4 py-2.5 rounded-xl hover:bg-emerald-50 transition-colors"
+            >
+              <MapPin size={13} /> Map View
+            </Link>
+            <Link
+              to="/mp-colleges"
+              className="flex items-center gap-2 bg-emerald-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-emerald-700 transition-colors shadow-sm"
+            >
+              <GraduationCap size={13} /> Find Colleges
+            </Link>
+          </div>
         </div>
 
         {/* Main footer grid */}
