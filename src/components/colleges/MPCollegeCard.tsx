@@ -3,7 +3,6 @@ import {
   MapPin, ArrowRight, GitCompare,
   Home, TrendingUp
 } from "lucide-react";
-import mpData from "../../data/mp-colleges.json";
 
 export interface MPInstitute {
   id:                string;

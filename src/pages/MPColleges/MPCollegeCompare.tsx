@@ -1,5 +1,6 @@
+
 import { useSearchParams, Link, Navigate } from "react-router-dom";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import {
   ArrowLeft, CheckCircle2, XCircle, Minus
 } from "lucide-react";

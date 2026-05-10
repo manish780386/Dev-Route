@@ -1,8 +1,7 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowLeft, MapPin, List,
-   X
+  ArrowLeft, MapPin, List, X
 } from "lucide-react";
 import mpData from "../../data/mp-colleges.json";
 import type { MPInstitute } from "../../components/colleges/MPCollegeCard";
@@ -49,16 +48,17 @@ function MapMarker({
   institute:  MPInstitute;
   position:   { x: number; y: number };
   isSelected: boolean;
-  onClick:    () => void;
+  onClick:    (e?: React.MouseEvent) => void;
 }) {
   const color = TYPE_COLORS_MAP[institute.type] ?? "#6b7280";
+  const handleClick = (e: React.MouseEvent) => { e.stopPropagation(); onClick(); };
   const size  = TIER_SIZES[institute.tier] ?? 9;
 
   return (
     <g
       transform={`translate(${position.x}, ${position.y})`}
       className="cursor-pointer"
-      onClick={onClick}
+      onClick={handleClick}
     >
       {/* Pulse ring for selected */}
       {isSelected && (
@@ -354,8 +354,7 @@ export default function MPCollegeMap() {
                     institute={inst}
                     position={pos}
                     isSelected={inst.id === selectedId}
-                    onClick={(e: any) => {
-                      e?.stopPropagation?.();
+                    onClick={() => {
                       setSelectedId(inst.id === selectedId ? null : inst.id);
                     }}
                   />
