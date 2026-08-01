@@ -10,19 +10,7 @@
 [![Vite](https://img.shields.io/badge/Vite-8.x-646CFF?style=flat&logo=vite)](https://vitejs.dev)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat)](LICENSE)
 
----
 
-## 📸 Screenshots
-
-| Home Page | MP College Finder | Mock Quiz |
-|-----------|-------------------|-----------|
-| ![Home](https://via.placeholder.com/400x250/0062f5/ffffff?text=Home+Page) | ![Colleges](https://via.placeholder.com/400x250/10b981/ffffff?text=MP+Colleges) | ![Quiz](https://via.placeholder.com/400x250/8b5cf6/ffffff?text=Mock+Quiz) |
-
-| Roadmap Graph | CS Subjects | Dark Mode |
-|---------------|-------------|-----------|
-| ![Roadmap](https://via.placeholder.com/400x250/f59e0b/ffffff?text=Roadmap+Graph) | ![CS](https://via.placeholder.com/400x250/ef4444/ffffff?text=CS+Q%26A) | ![Dark](https://via.placeholder.com/400x250/1f2937/ffffff?text=Dark+Mode) |
-
----
 
 ## ✨ Features
 
