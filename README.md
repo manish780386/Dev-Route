@@ -365,8 +365,8 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 Built with ❤️ for every student in India
 
-[![GitHub](https://img.shields.io/badge/GitHub-yourusername-181717?style=flat&logo=github)](https://github.com/yourusername)
-[![Twitter](https://img.shields.io/badge/Twitter-@yourhandle-1DA1F2?style=flat&logo=twitter)](https://twitter.com/yourhandle)
+[![GitHub](https://img.shields.io/badge/GitHub-yourusername-181717?style=flat&logo=github)](https://github.com/manish780386)
+[![Twitter](https://img.shields.io/badge/Twitter-@yourhandle-1DA1F2?style=flat&logo=twitter)](https://twitter.com/ManishDang90567)
 
 ---
 
